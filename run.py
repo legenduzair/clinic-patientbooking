@@ -12,5 +12,5 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('clinic-patientbooking')
 
-patient_registration = SHEET.worksheet('patient_registration')
-appointment_registration = SHEET.worksheet('appointment_registration')
+PATIENT = SHEET.worksheet('patient_registration')
+APPOINTMENT = SHEET.worksheet('appointment_registration')
