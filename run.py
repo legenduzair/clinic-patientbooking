@@ -85,6 +85,9 @@ def register_new_patient():
     register_new_patient["Email Address"] = email_address
 
 def validate_name(f_name):
+    """
+    Checks if the first name entered is valid.
+    """
     pattern = "[a-zA-Z]"
     if (re.search(pattern, f_name)):
         return True
@@ -93,6 +96,9 @@ def validate_name(f_name):
         return False
 
 def validate_name(l_name):
+    """
+    Checks if the last name entered is valid.
+    """
     pattern = "[a-zA-Z]"
     if (re.search(pattern, l_name)):
         return True
@@ -101,6 +107,9 @@ def validate_name(l_name):
         return False
 
 def validate_dob(date_of_birth):
+    """
+    Checks if the date of birth entered is valid.
+    """
     pattern = "^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"
     if (re.search(pattern, date_of_birth)):
         return True
@@ -109,6 +118,9 @@ def validate_dob(date_of_birth):
         return False
 
 def validate_number(mobile_number):
+    """
+    Checks if the mobile number entered is valid.
+    """
     pattern = "^(07\d{8,12}|447\d{7,11})$"
     if (re.search(pattern, mobile_number)):
         return True
@@ -117,6 +129,9 @@ def validate_number(mobile_number):
         return False
 
 def validate_email(email_address):
+    """
+    Checks if the email address entered is valid.
+    """
     pattern = "[a-zA-Z0-9]+@[a-zA-Z]+\.(com|co.uk|net)"
     if (re.search(pattern, email_address)):
         return True
