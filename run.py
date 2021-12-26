@@ -28,7 +28,13 @@ def main_menu():
                 5. Delete Patient Details
                 6. Exit\n
             """)
-    
+    while True:
+        user_selection = input("Please select a number from the following options: ")
+        if user_selection == '1':
+            print("Please enter the following details to register a patient: \n")
+            register_new_patient()
+            break
+
 def register_new_patient():
     """
     Register new patient by adding first name, surname, date of birth,
