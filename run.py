@@ -62,10 +62,10 @@ def register_new_patient():
 
     while True:
         date_of_birth = input("Date of Birth: ")
-        if not date_of_birth:
-            print("Please enter your date of birth in the correct format")
-        else:
+        if validate_dob(date_of_birth):
             break
+        else:
+            continue
     register_new_patient["Date of Birth"] = date_of_birth
 
     while True:
@@ -98,6 +98,14 @@ def validate_name(l_name):
         return True
     else:
         print("Invalid input. Please try again.")
+        return False
+
+def validate_dob(date_of_birth):
+    pattern = "^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"
+    if (re.search(pattern, date_of_birth)):
+        return True
+    else:
+        print("Invalid input. Please try again entering your D.O.B in dd/mm/yyyy format")
         return False
 
 def validate_number(mobile_number):
