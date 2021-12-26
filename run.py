@@ -46,18 +46,18 @@ def register_new_patient():
 
     while True:
         f_name = input("First Name: ")
-        if not f_name:
-            print("Please input your first name")
-        else:
+        if validate_name(f_name):
             break
+        else:
+            continue
     register_new_patient["First Name"] = f_name
 
     while True:
         l_name = input("Last Name: ")
-        if not l_name:
-            print("Please input your last name")
-        else:
+        if validate_name(l_name):
             break
+        else:
+            continue
     register_new_patient["Surname"] = l_name
 
     while True:
@@ -83,6 +83,22 @@ def register_new_patient():
         else:
             continue
     register_new_patient["Email Address"] = email_address
+
+def validate_name(f_name):
+    pattern = "[a-zA-Z]"
+    if (re.search(pattern, f_name)):
+        return True
+    else:
+        print("Invalid input. Please try again.")
+        return False
+
+def validate_name(l_name):
+    pattern = "[a-zA-Z]"
+    if (re.search(pattern, l_name)):
+        return True
+    else:
+        print("Invalid input. Please try again.")
+        return False
 
 def validate_email(email_address):
     pattern = "[a-zA-Z0-9]+@[a-zA-Z]+\.(com|co.uk|net)"
