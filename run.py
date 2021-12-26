@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+import re
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -77,12 +78,19 @@ def register_new_patient():
 
     while True:
         email_address = input("Email Address: ")
-        if not email_address:
-            print("Please input an email address")
-        else:
+        if validate_email(email_address):
             break
+        else:
+            continue
     register_new_patient["Email Address"] = email_address
 
+def validate_email(email_address):
+    pattern = "[a-zA-Z0-9]+@[a-zA-Z]+\.(com|co.uk|net)"
+    if (re.search(pattern, email_address)):
+        return True
+    else:
+        print("Invalid email address. Please try again.")
+        return False
 
 def main():
     main_menu()
