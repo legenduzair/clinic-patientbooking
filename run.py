@@ -70,10 +70,10 @@ def register_new_patient():
 
     while True:
         mobile_number = input("Mobile Number: ")
-        if not mobile_number:
-            print("Please input a mobile number")
-        else:
+        if validate_number(mobile_number):
             break
+        else:
+            continue
     register_new_patient["Mobile Number"] = mobile_number
 
     while True:
@@ -98,6 +98,14 @@ def validate_name(l_name):
         return True
     else:
         print("Invalid input. Please try again.")
+        return False
+
+def validate_number(mobile_number):
+    pattern = "^(07\d{8,12}|447\d{7,11})$"
+    if (re.search(pattern, mobile_number)):
+        return True
+    else:
+        print("Invalid number. Please try again.")
         return False
 
 def validate_email(email_address):
