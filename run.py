@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+import re
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -53,10 +54,34 @@ def register_new_patient():
             break
     register_new_patient["Surname"] = l_name
 
+    while True:
+        date_of_birth = input("Date of Birth: ")
+        if not date_of_birth:
+            print("Please enter your date of birth in the correct format")
+        else:
+            break
+    register_new_patient["Date of Birth"] = date_of_birth
+
+    while True:
+        mobile_number = input("Mobile Number: ")
+        if not mobile_number:
+            print("Please input a mobile number")
+        else:
+            break
+    register_new_patient["Mobile Number"] = mobile_number
+
+    while True:
+        email_address = input("Email Address: ")
+        if not email_address:
+            print("Please input an email address")
+        else:
+            break
+    register_new_patient["Email Address"] = email_address
+
+
 def main():
     main_menu()
     register_new_patient()
-
 
 print("--------------------Welcome to LabClinic--------------------")
 print("----------A client registration system that allows----------")
