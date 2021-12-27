@@ -242,27 +242,8 @@ def book_another_test():
             break
         else:
             print("Invalid input. Please choose from A or B.")
-            book_another_test()()
+            book_another_test()
         return False
-
-# def book_test_option():
-#     """
-#     Allows the user to select whether they want to book a test or return
-#     to the main menu
-#     """
-#     while True:
-#         lab_test = input("Would you like to book a test for this patient? If so, please press Y or press N to go back to the main menu \n")
-#         if lab_test == "Y" or lab_test == "y":
-#             book_test()
-#             break
-#         elif lab_test == "N" or lab_test == "n":
-#             main_menu()
-#             break
-#         else:
-#             print('Invalid input. Please choose from Y or N')
-#             book_test_option()
-#         return False
-
 
 def update_worksheet_patient(register_new_patient):
     """
