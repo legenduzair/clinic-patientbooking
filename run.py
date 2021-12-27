@@ -147,6 +147,10 @@ def validate_email(email_address):
 #     print('A Unique Patient ID has been generated.')
 
 def register_another_patient():
+    """
+    Allows the user to register an additional new patient or 
+    go back to the main menu after registering the first one.
+    """
     while True:
         another = input("Would you like to register another patient? If so, please press A. If you would like to go back to the main menu: Please press B \n")
         if another == "A" or another == "a":
