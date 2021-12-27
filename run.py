@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import re
+import uuid
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -141,13 +142,32 @@ def validate_email(email_address):
         print("Invalid email address. Please try again.")
         return False
 
+# def generate_patient_id(patient_id):
+#     patient_id= uuid.uuid4().hex[:8]
+#     print('A Unique Patient ID has been generated.')
+
+def register_another_patient():
+    while True:
+        another = input("Would you like to register another patient? If so, please press A. If you would like to go back to the main menu: Please press B \n")
+        if another == "A" or another == "a":
+            register_new_patient()
+            break
+        elif another == "B" or another == "b":
+            main_menu()
+            break
+        else:
+            print("Invalid. Please choose from A and B.")
+            register_another_patient()
+        return False
+
 def update_worksheet_patient(register_new_patient):
     """
     Updates the worksheet by adding details of the newly registered patient.
     """
     new_patient_worksheet = SHEET.worksheet('patient_registration')
     new_patient_worksheet.append_row([x for x in register_new_patient.values()])
-    print('New patient has been registered and the files have been updated!')
+    print('New patient has been registered and the files have been updated! \n')
+    register_another_patient()
 
 
 def main():
