@@ -26,7 +26,7 @@ def main_menu():
                 1. Register New Patient
                 2. Book a Test
                 3. Update Patient Details
-                4. Search for Patient Details
+                4. Search for a Patient
                 5. Delete Patient Details
                 6. Exit\n
             """)
@@ -36,6 +36,12 @@ def main_menu():
             print("Please enter the following details to register a patient: \n")
             register_new_patient()
             break
+        elif user_selection == '6':
+            print("LabClinic is now shutting down... \n")
+            exit_system()
+            break
+        else:
+            print("Invalid input. Please enter any digit from 1-6")
 
 def register_new_patient():
     """
@@ -173,6 +179,13 @@ def update_worksheet_patient(register_new_patient):
     print('New patient has been registered and the files have been updated! \n')
     register_another_patient()
 
+def exit_system():
+    """
+    Exits the programme when chosen from the main menu.
+    """
+    print("-----------LabClinic has now been shut down-----------")
+    print("------------Thank you for using our system------------")
+    print("-----------------Have a lovely day!-----------------")
 
 def main():
     main_menu()
