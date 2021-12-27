@@ -227,6 +227,24 @@ def book_test():
 
     return update_worksheet_appointment(book_test)
 
+def book_another_test():
+    """
+    Allows the user to register an additional new patient or 
+    go back to the main menu after registering the first one.
+    """
+    while True:
+        another = input("Would you like to book another appointment? If so, please press A. If you would like to go back to the main menu: Please press B \n")
+        if another == "A" or another == "a":
+            book_test()
+            break
+        elif another == "B" or another == "b":
+            main_menu()
+            break
+        else:
+            print("Invalid input. Please choose from A or B.")
+            book_another_test()()
+        return False
+
 # def book_test_option():
 #     """
 #     Allows the user to select whether they want to book a test or return
@@ -261,7 +279,8 @@ def update_worksheet_appointment(book_test):
     """
     new_appointment_worksheet = SHEET.worksheet('appointment_registration')
     new_appointment_worksheet.append_row([x for x in book_test.values()])
-    print('New appointment has been booked for this patient \n')
+    print('New appointment has been booked for this patient! \n')
+    book_another_test()
 
 def exit_system():
     """
