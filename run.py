@@ -221,6 +221,8 @@ def book_test():
             break
     book_test["Special Requirements"] = special_requirements
 
+    return update_worksheet_appointment(book_test)
+
 # def book_test_option():
 #     """
 #     Allows the user to select whether they want to book a test or return
@@ -249,6 +251,12 @@ def update_worksheet_patient(register_new_patient):
     print('New patient has been registered and the files have been updated! \n')
     register_another_patient()
 
+def update_worksheet_appointment(book_test):
+
+    new_appointment_worksheet = SHEET.worksheet('appointment_registration')
+    new_appointment_worksheet.append_row([x for x in book_test.values()])
+    print('New appointment has been booked for this patient \n')
+
 def exit_system():
     """
     Exits the programme when chosen from the main menu.
@@ -260,6 +268,7 @@ def exit_system():
 def main():
     main_menu()
     register_new_patient()
+    book_test()
 
 print("--------------------Welcome to LabClinic--------------------")
 print("----------A client registration system that allows----------")
