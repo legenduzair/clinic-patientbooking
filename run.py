@@ -229,8 +229,8 @@ def book_test():
 
 def book_another_test():
     """
-    Allows the user to register an additional new patient or 
-    go back to the main menu after registering the first one.
+    Allows the user to book an additional appointment or 
+    go back to the main menu after booking the first one.
     """
     while True:
         another = input("Would you like to book another appointment? If so, please press A. If you would like to go back to the main menu: Please press B \n")
