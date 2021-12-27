@@ -142,6 +142,9 @@ def validate_email(email_address):
         return False
 
 def update_worksheet_patient(register_new_patient):
+    """
+    Updates the worksheet by adding details of the newly registered patient.
+    """
     new_patient_worksheet = SHEET.worksheet('patient_registration')
     new_patient_worksheet.append_row([x for x in register_new_patient.values()])
     print('New patient has been registered and the files have been updated!')
