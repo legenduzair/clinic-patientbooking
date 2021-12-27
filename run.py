@@ -186,7 +186,11 @@ def register_another_patient():
         return False
 
 def book_test():
-
+    """
+    Books an appointment for a corresponding patient by adding details
+    of full name, test that is required, appointment time 
+    and any special requirements that are necessary for the booking.
+    """
     book_test = {}
 
     while True:
@@ -252,7 +256,9 @@ def update_worksheet_patient(register_new_patient):
     register_another_patient()
 
 def update_worksheet_appointment(book_test):
-
+    """
+    Updates the worksheet by adding details of a newly booked appointment for a patient.
+    """
     new_appointment_worksheet = SHEET.worksheet('appointment_registration')
     new_appointment_worksheet.append_row([x for x in book_test.values()])
     print('New appointment has been booked for this patient \n')
