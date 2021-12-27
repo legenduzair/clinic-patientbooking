@@ -1,7 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import re
-import uuid
+# import uuid
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -35,6 +35,10 @@ def main_menu():
         if user_selection == '1':
             print("Please enter the following details to register a patient: \n")
             register_new_patient()
+            break
+        elif user_selection == '2':
+            print("Please enter the following details to book a test: \n")
+            book_test()
             break
         elif user_selection == '6':
             print("LabClinic is now shutting down... \n")
@@ -148,6 +152,17 @@ def validate_email(email_address):
         print("Invalid email address. Please try again.")
         return False
 
+def validate_name(full_name):
+    """
+    Checks if the first name entered is valid.
+    """
+    pattern = "[a-zA-Z]"
+    if (re.search(pattern, full_name)):
+        return True
+    else:
+        print("Invalid input. Please try again.")
+        return False
+
 # def generate_patient_id(patient_id):
 #     patient_id= uuid.uuid4().hex[:8]
 #     print('A Unique Patient ID has been generated.')
@@ -169,6 +184,42 @@ def register_another_patient():
             print("Invalid input. Please choose from A or B.")
             register_another_patient()
         return False
+
+def book_test():
+
+    book_test = {}
+
+    while True:
+        full_name = input("Full Name: ")
+        if validate_name(full_name):
+            break
+        else:
+            continue
+    book_test["Full Name"] = full_name
+
+    while True:
+        test_required = input("Test Required: ")
+        if not test_required:
+            print("Please enter a test for the patient.")
+        else:
+            break
+    book_test["Test Required"] = test_required
+
+    while True:
+        appointment_time = input("Appointment Time: ")
+        if not appointment_time:
+            print("Please enter a time for the appointment.")
+        else:
+            break
+    book_test["Appointment Time"] = appointment_time
+
+    while True:
+        special_requirements = input("Special Requirements: ")
+        if not special_requirements:
+            print("Please enter Yes or No.")
+        else:
+            break
+    book_test["Special Requirements"] = special_requirements
 
 # def book_test_option():
 #     """
