@@ -230,6 +230,20 @@ def book_test():
 
     return update_worksheet_appointment(book_test)
 
+def book_test_request():
+    while True:
+        appointment = input("Would you like to book an appointment for this patient? If so, please press A. If you would like to go back to the main menu: Please press B \n")
+        if appointment == "A" or appointment == "a":
+            book_test()
+            break
+        elif appointment == "B" or appointment == "b":
+            main_menu()
+            break
+        else:
+            print("Invalid input. Please choose from A or B.")
+            book_test_request()
+        return False
+
 def book_another_test():
     """
     Allows the user to book an additional appointment or 
@@ -314,6 +328,7 @@ def search_acquire(search_option):
 
         print("The following patient has been found!")
         print(listWithElem)
+        book_test_request()
     else:
         print("Patient not found. Please try again.")
         search_patient()
