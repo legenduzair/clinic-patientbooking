@@ -99,6 +99,7 @@ def register_new_patient():
             continue
     register_new_patient["Email Address"] = email_address
 
+    return book_test_request()
     return update_worksheet_patient(register_new_patient)
 
 def validate_name(f_name):
