@@ -99,7 +99,7 @@ def register_new_patient():
             continue
     register_new_patient["Email Address"] = email_address
 
-    return book_test_request()
+    return registeranother_or_book()
     return update_worksheet_patient(register_new_patient)
 
 def validate_name(f_name):
@@ -187,6 +187,23 @@ def register_another_patient():
         else:
             print("Invalid input. Please choose from A or B.")
             register_another_patient()
+        return False
+
+def registeranother_or_book():
+    while True:
+        reg_or_book = input("If you would like to register another patient, please press A. If you would look to book a test for the current patient, please press T. To go back to the main menu, please press B \n")
+        if reg_or_book == "A" or reg_or_book == "a":
+            register_new_patient()
+            break
+        elif reg_or_book == "T" or reg_or_book == "t":
+            book_test()
+            break
+        elif reg_or_book == "B" or reg_or_book == "b":
+            main_menu()
+            break
+        else:
+            print("Invalid input. Please choose from A, B or C.")
+            registeranother_or_book()
         return False
 
 def book_test():
