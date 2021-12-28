@@ -293,7 +293,16 @@ def search_patient():
 def search_acquire(search_option):
     if search_option == "First Name":
         find_input = input("First Name: ")
-        first_name = 
+        first_name = column_acquire("First Name", find_input)
+    elif search_option == "Surname":
+        find_input = input("Last Name: ")
+        last_name = column_acquire("Surname", find_input)
+    elif search_option == "Date of Birth":
+        find_input = input("Date of Birth: ")
+        d_o_b = column_acquire("Date of Birth", find_input)
+    else:
+        print("Invalid input. Please try again.")
+    
 
 def column_acquire(column, value):
     print("Searching for Patient... \n")
