@@ -289,6 +289,17 @@ def search_patient():
             search_patient()
             break
             return False
+
+def search_acquire(search_option):
+    if search_option == "First Name":
+        find_input = input("First Name: ")
+        first_name = 
+
+def column_acquire(column, value):
+    print("Searching for Patient... \n")
+    column_number_acquire = PATIENT.findall(value)
+
+    return column_number_acquire
     
 def exit_system():
     """
