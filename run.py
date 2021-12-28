@@ -40,6 +40,10 @@ def main_menu():
             print("Please enter the following details to book a test: \n")
             book_test()
             break
+        elif user_selection == '4':
+            print("Please follow the instructions on the search menu: \n")
+            search_patient()
+            break
         elif user_selection == '6':
             print("LabClinic is now shutting down... \n")
             exit_system()
@@ -262,6 +266,30 @@ def update_worksheet_appointment(book_test):
     print('New appointment has been booked for this patient! \n')
     book_another_test()
 
+def search_patient():
+    print("-----Search By:-----")
+    print("--------------------")
+    print("---A. First Name---")
+    print("----B. Surname----")
+    print("--C. Date of Birth--")
+    print("---D. Main Menu---")
+    print("--------------------")
+    while True:
+        search = input("Please choose an option from A to D. \n")
+        if search == "A" or search == "a":
+            search_acquire("First Name")
+        elif search == "B" or search == "b":
+            search_acquire("Surname")
+        elif search == "C" or search == "c":
+            search_acquire("Date of Birth")
+        elif search == "D" or search == "d":
+            main_menu()
+        else: 
+            print("Invalid input. Please try again.")
+            search_patient()
+            break
+            return False
+    
 def exit_system():
     """
     Exits the programme when chosen from the main menu.
