@@ -99,7 +99,6 @@ def register_new_patient():
             continue
     register_new_patient["Email Address"] = email_address
 
-    return registeranother_or_book()
     return update_worksheet_patient(register_new_patient)
 
 def validate_name(f_name):
@@ -171,23 +170,23 @@ def validate_name(full_name):
 # def generate_patient_id():
 #     id = get_random_string(length=6, allowed_chars='ABCDEF')
     
-def register_another_patient():
-    """
-    Allows the user to register an additional new patient or 
-    go back to the main menu after registering the first one.
-    """
-    while True:
-        another = input("Would you like to register another patient? If so, please press A. If you would like to go back to the main menu: Please press B \n")
-        if another == "A" or another == "a":
-            register_new_patient()
-            break
-        elif another == "B" or another == "b":
-            main_menu()
-            break
-        else:
-            print("Invalid input. Please choose from A or B.")
-            register_another_patient()
-        return False
+# def register_another_patient():
+#     """
+#     Allows the user to register an additional new patient or 
+#     go back to the main menu after registering the first one.
+#     """
+#     while True:
+#         another = input("Would you like to register another patient? If so, please press A. If you would like to go back to the main menu: Please press B \n")
+#         if another == "A" or another == "a":
+#             register_new_patient()
+#             break
+#         elif another == "B" or another == "b":
+#             main_menu()
+#             break
+#         else:
+#             print("Invalid input. Please choose from A or B.")
+#             register_another_patient()
+#         return False
 
 def registeranother_or_book():
     while True:
@@ -287,7 +286,7 @@ def update_worksheet_patient(register_new_patient):
     new_patient_worksheet = SHEET.worksheet('patient_registration')
     new_patient_worksheet.append_row([x for x in register_new_patient.values()])
     print('New patient has been registered and the files have been updated! \n')
-    register_another_patient()
+    registeranother_or_book()
 
 def update_worksheet_appointment(book_test):
     """
