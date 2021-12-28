@@ -1,7 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import re
-# import uuid
+# from django.utils.crypto import get_random_string
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -163,10 +163,9 @@ def validate_name(full_name):
         print("Invalid input. Please try again.")
         return False
 
-# def generate_patient_id(patient_id):
-#     patient_id= uuid.uuid4().hex[:8]
-#     print('A Unique Patient ID has been generated.')
-
+# def generate_patient_id():
+#     id = get_random_string(length=6, allowed_chars='ABCDEF')
+    
 def register_another_patient():
     """
     Allows the user to register an additional new patient or 
