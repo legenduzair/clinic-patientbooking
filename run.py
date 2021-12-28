@@ -294,14 +294,29 @@ def search_acquire(search_option):
     if search_option == "First Name":
         find_input = input("First Name: ")
         first_name = column_acquire("First Name", find_input)
+        search_string = first_name
     elif search_option == "Surname":
         find_input = input("Last Name: ")
         last_name = column_acquire("Surname", find_input)
+        search_string = last_name
     elif search_option == "Date of Birth":
         find_input = input("Date of Birth: ")
-        d_o_b = column_acquire("Date of Birth", find_input)
+        dob = column_acquire("Date of Birth", find_input)
+        search_string = dob
     else:
         print("Invalid input. Please try again.")
+    
+    if search_string:
+        for cell_value in (search_string):
+            row_number = cell_value.row
+            value_list = PATIENT.row_values(row_number)
+            listWithElem = " ".join(map(str, value_list))
+
+        print("The following patient has been found!")
+        print(listWithElem)
+    else:
+        print("Patient not found. Please try again.")
+        search_patient()
     
 
 def column_acquire(column, value):
