@@ -189,6 +189,11 @@ def validate_name(full_name):
 #         return False
 
 def registeranother_or_book():
+    """
+    Allows the user to choose an option between registering another new patient,
+    booking a test for the current patient being entered or traversing back to
+    the main menu.
+    """
     while True:
         reg_or_book = input("If you would like to register another patient, please press A. If you would look to book a test for the current patient, please press T. To go back to the main menu, please press B \n")
         if reg_or_book == "A" or reg_or_book == "a":
@@ -248,6 +253,10 @@ def book_test():
     return update_worksheet_appointment(book_test)
 
 def book_test_request():
+    """
+    Allows the user to book a test after registering or searching for a 
+    patient instead of having to go back to the main menu.
+    """
     while True:
         appointment = input("Would you like to book an appointment for this patient? If so, please press A. If you would like to go back to the main menu: Please press B \n")
         if appointment == "A" or appointment == "a":
@@ -298,6 +307,10 @@ def update_worksheet_appointment(book_test):
     book_another_test()
 
 def search_patient():
+    """
+    Allows the user to access a search menu to find any patient by their 
+    first name, surname or date of birth. 
+    """
     print("-----Search By:-----")
     print("--------------------")
     print("---A. First Name---")
@@ -322,6 +335,11 @@ def search_patient():
             return False
 
 def search_acquire(search_option):
+    """
+    Acquires the input from the initial register new patient function and 
+    searches the gspread database for those inputs. Once acquired, the 
+    information of the patient is translated into a string.
+    """
     if search_option == "First Name":
         find_input = input("First Name: ")
         first_name = column_acquire("First Name", find_input)
@@ -352,6 +370,9 @@ def search_acquire(search_option):
     
 
 def column_acquire(column, value):
+    """
+    Acquires the column and value of each input. 
+    """
     print("Searching for Patient... \n")
     column_number_acquire = PATIENT.findall(value)
 
