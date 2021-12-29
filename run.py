@@ -25,7 +25,7 @@ def main_menu():
             --------------Main Menu--------------
                 1. Register New Patient
                 2. Book a Test
-                3. Update Patient Details
+                3. Cancel a Test
                 4. Search for a Patient
                 5. Delete Patient Details
                 6. Exit\n
