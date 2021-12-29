@@ -377,6 +377,12 @@ def column_acquire(column, value):
     column_number_acquire = PATIENT.findall(value)
 
     return column_number_acquire
+
+def delete_patient_row(row):
+    deleted_patient = PATIENT.delete_rows(row)
+    print("This patient's details are now being removed from the system. \n")
+    main_menu()
+    return deleted_patient
     
 def exit_system():
     """
