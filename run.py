@@ -255,22 +255,25 @@ def book_test():
 
     return update_worksheet_appointment(book_test)
 
-def book_test_request():
+def book_test_or_delete(row_number):
     """
     Allows the user to book a test after registering or searching for a 
     patient instead of having to go back to the main menu.
     """
     while True:
-        appointment = input("Would you like to book an appointment for this patient? If so, please press A. If you would like to go back to the main menu: Please press B \n")
+        appointment = input("Would you like to book an appointment for this patient? If so, please press A. Would you like to delete this patient? If so, please press D. If you would like to go back to the main menu: Please press B \n")
         if appointment == "A" or appointment == "a":
             book_test()
+            break
+        elif appointment == "D" or appointment == "d":
+            delete_one_patient(row_number)
             break
         elif appointment == "B" or appointment == "b":
             main_menu()
             break
         else:
             print("Invalid input. Please choose from A or B.")
-            book_test_request()
+            book_test_or_delete()
         return False
 
 def book_another_test():
@@ -366,7 +369,7 @@ def search_acquire(search_option):
 
         print("The following patient has been found!")
         print(listWithElem)
-        book_test_request()
+        book_test_or_delete(row_number)
     else:
         print("Patient not found. Please try again.")
         search_patient()
@@ -381,12 +384,12 @@ def column_acquire(column, value):
 
     return column_number_acquire
 
-def delete_one_patient(patient):
-    delete_option = input("Would you like to delete this contact? If yes, please press Y. If no, please press N. \n")
+def delete_one_patient(row_number):
+    delete_option = input("Are you sure you want to delete this contact? If yes, please press Y. If no, please press N. \n")
     while True:
         if delete_option == "Y" or delete_option == "y":
             print("Patient is being removed... \n")
-            delete_patient_row(patient)
+            delete_patient_row(row_number)
         elif delete_option == "N" or delete_option == "n":
             print("Patient has not been removed and is still in the system. Now taking you back to the main menu. \n")
             main_menu()
@@ -396,8 +399,8 @@ def delete_one_patient(patient):
             break
         return False
 
-def delete_patient_row(row):
-    deleted_patient = PATIENT.delete_rows(row)
+def delete_patient_row(row_number):
+    deleted_patient = PATIENT.delete_rows(row_number)
     print("This patient's details are now being removed from the system. \n")
     main_menu()
     return deleted_patient
