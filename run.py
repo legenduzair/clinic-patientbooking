@@ -44,6 +44,9 @@ def main_menu():
             print("Please follow the instructions on the search menu: \n")
             search_patient()
             break
+        elif user_selection == '5':
+            print("Please search for the patient you would like to delete. \n")
+            search_patient()
         elif user_selection == '6':
             print("LabClinic is now shutting down... \n")
             exit_system()
@@ -377,6 +380,21 @@ def column_acquire(column, value):
     column_number_acquire = PATIENT.findall(value)
 
     return column_number_acquire
+
+def delete_one_patient(patient):
+    delete_option = input("Would you like to delete this contact? If yes, please press Y. If no, please press N. \n")
+    while True:
+        if delete_option == "Y" or delete_option == "y":
+            print("Patient is being removed... \n")
+            delete_patient_row(patient)
+        elif delete_option == "N" or delete_option == "n":
+            print("Patient has not been removed and is still in the system. Now taking you back to the main menu. \n")
+            main_menu()
+        else: 
+            print("Invalid input. Please try again.")
+            search_patient()
+            break
+        return False
 
 def delete_patient_row(row):
     deleted_patient = PATIENT.delete_rows(row)
