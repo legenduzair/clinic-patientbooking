@@ -266,7 +266,7 @@ def book_test_or_delete(row_number):
             break
         else:
             print("Invalid input. Please choose from A or B.")
-            book_test_or_delete()
+            book_test_or_delete(row_number)
         return False
 
 
@@ -441,7 +441,7 @@ def search_acquire(search_option):
     else:
         print("Patient not found. Please try again.")
         search_patient()
-          
+
 
 def column_acquire(column, value):
     """
