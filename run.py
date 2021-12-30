@@ -346,6 +346,21 @@ def column_acquire_two(column, value):
 
     return column_number_acquire_two
 
+def delete_one_test(row_number_test):
+    delete_test_option = input("Are you sure you want to cancel this test? If yes, please press Y. If no, please press N. \n")
+    while True:
+        if delete_test_option == "Y" or delete_test_option == "y":
+            print("Test is now being cancelled... \n")
+            delete_test_row(row_number_test)
+        elif delete_test_option == "N" or delete_test_option == "n":
+            print("Test has not been cancelled and is still in the system. Now taking you back to the main menu. \n")
+            main_menu()
+        else: 
+            print("Invalid input. Please try again.")
+            search_test()
+            break
+        return False
+
 def delete_test_row(row_number_test):
     deleted_test = APPOINTMENT.delete_rows(row_number_test)
     print("This test has now been cancelled and has been removed the system. \n")
@@ -425,7 +440,7 @@ def column_acquire(column, value):
     return column_number_acquire
 
 def delete_one_patient(row_number):
-    delete_option = input("Are you sure you want to delete this contact? If yes, please press Y. If no, please press N. \n")
+    delete_option = input("Are you sure you want to delete this patient? If yes, please press Y. If no, please press N. \n")
     while True:
         if delete_option == "Y" or delete_option == "y":
             print("Patient is being removed... \n")
