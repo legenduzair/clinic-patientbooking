@@ -296,6 +296,10 @@ def update_worksheet_appointment(book_test):
     book_another_test()
 
 def search_test():
+    """
+    Allows the user to search for any patient by their full name
+    to retrieve test details. 
+    """
     print("-----Please Search Tests By Entering Patient's Full Name:-----")
     search_test_option = "Full Name"
 
@@ -320,13 +324,18 @@ def search_test():
         search_test()
 
 def column_acquire_two(column, value):
-
+    """
+    Acquires the column and value of each test input. 
+    """
     print("Searching for test booked for patient... \n")
     column_number_acquire_two = APPOINTMENT.findall(value)
 
     return column_number_acquire_two
 
 def delete_one_test(row_number_test):
+    """
+    Allows the user to select between yes or no when cancelled a test.
+    """
     delete_test_option = input("Are you sure you want to cancel this test? If yes, please press Y. If no, please press N. \n")
     while True:
         if delete_test_option == "Y" or delete_test_option == "y":
@@ -342,6 +351,10 @@ def delete_one_test(row_number_test):
         return False
 
 def delete_test_row(row_number_test):
+    """
+    Removes a test of a patient by deleting a row from the APPOINTMENT worksheet
+    on gspread.
+    """
     deleted_test = APPOINTMENT.delete_rows(row_number_test)
     print("This test has now been cancelled and has been removed the system. \n")
     main_menu()
@@ -412,7 +425,7 @@ def search_acquire(search_option):
 
 def column_acquire(column, value):
     """
-    Acquires the column and value of each input. 
+    Acquires the column and value of each patient input. 
     """
     print("Searching for patient... \n")
     column_number_acquire = PATIENT.findall(value)
@@ -420,6 +433,9 @@ def column_acquire(column, value):
     return column_number_acquire
 
 def delete_one_patient(row_number):
+    """
+    Allows the user to select between yes or no when removing patient details.
+    """
     delete_option = input("Are you sure you want to delete this patient? If yes, please press Y. If no, please press N. \n")
     while True:
         if delete_option == "Y" or delete_option == "y":
@@ -435,6 +451,10 @@ def delete_one_patient(row_number):
         return False
 
 def delete_patient_row(row_number):
+    """
+    Removes a patient by deleting a row from the PATIENT worksheet
+    on gspread.
+    """
     deleted_patient = PATIENT.delete_rows(row_number)
     print("This patient's details are now being removed from the system. \n")
     main_menu()
