@@ -208,7 +208,7 @@ def registeranother_or_book():
 def book_test():
     """
     Books an appointment for a corresponding patient by adding details
-    of full name, test that is required, appointment time 
+    of full name, test that is required, appointment time
     and any special requirements that are necessary for the booking.
     """
     book_test = {}
@@ -250,7 +250,7 @@ def book_test():
 
 def book_test_or_delete(row_number):
     """
-    Allows the user to book a test after registering or searching for a 
+    Allows the user to book a test after registering or searching for a
     patient instead of having to go back to the main menu.
     """
     while True:
@@ -272,7 +272,7 @@ def book_test_or_delete(row_number):
 
 def book_another_test():
     """
-    Allows the user to book an additional appointment or 
+    Allows the user to book an additional appointment or
     go back to the main menu after booking the first one.
     """
     while True:
@@ -301,7 +301,7 @@ def update_worksheet_patient(register_new_patient):
 
 def update_worksheet_appointment(book_test):
     """
-    Updates the worksheet by adding details of a newly booked appointment 
+    Updates the worksheet by adding details of a newly booked appointment
     for a patient.
     """
     new_appointment_worksheet = SHEET.worksheet('appointment_registration')
@@ -313,7 +313,7 @@ def update_worksheet_appointment(book_test):
 def search_test():
     """
     Allows the user to search for any patient by their full name
-    to retrieve test details. 
+    to retrieve test details.
     """
     print("-----Please Search Tests By Entering Patient's Full Name:-----")
     search_test_option = "Full Name"
@@ -341,7 +341,7 @@ def search_test():
 
 def column_acquire_two(column, value):
     """
-    Acquires the column and value of each test input. 
+    Acquires the column and value of each test input.
     """
     print("Searching for test booked for patient... \n")
     column_number_acquire_two = APPOINTMENT.findall(value)
@@ -361,7 +361,7 @@ def delete_one_test(row_number_test):
         elif delete_test_option == "N" or delete_test_option == "n":
             print("Test has not been cancelled. \n")
             main_menu()
-        else: 
+        else:
             print("Invalid input. Please try again.")
             search_test()
             break
@@ -370,7 +370,7 @@ def delete_one_test(row_number_test):
 
 def delete_test_row(row_number_test):
     """
-    Removes a test of a patient by deleting a row from the APPOINTMENT 
+    Removes a test of a patient by deleting a row from the APPOINTMENT
     worksheet on gspread.
     """
     deleted_test = APPOINTMENT.delete_rows(row_number_test)
@@ -381,8 +381,8 @@ def delete_test_row(row_number_test):
 
 def search_patient():
     """
-    Allows the user to access a search menu to find any patient by their 
-    first name, surname or date of birth. 
+    Allows the user to access a search menu to find any patient by their
+    first name, surname or date of birth.
     """
     print("-----Search By:-----")
     print("--------------------")
@@ -401,7 +401,7 @@ def search_patient():
             search_acquire("Date of Birth")
         elif search == "D" or search == "d":
             main_menu()
-        else: 
+        else:
             print("Invalid input. Please try again.")
             search_patient()
             break
@@ -410,8 +410,8 @@ def search_patient():
 
 def search_acquire(search_option):
     """
-    Acquires the input from the initial register new patient function and 
-    searches the gspread database for those inputs. Once acquired, the 
+    Acquires the input from the initial register new patient function and
+    searches the gspread database for those inputs. Once acquired, the
     information of the patient is translated into a string.
     """
     if search_option == "First Name":
@@ -428,7 +428,7 @@ def search_acquire(search_option):
         search_string = dob
     else:
         print("Invalid input. Please try again.")
-    
+ 
     if search_string:
         for cell_value in (search_string):
             row_number = cell_value.row
@@ -441,11 +441,11 @@ def search_acquire(search_option):
     else:
         print("Patient not found. Please try again.")
         search_patient()
-    
+          
 
 def column_acquire(column, value):
     """
-    Acquires the column and value of each patient input. 
+    Acquires the column and value of each patient input.
     """
     print("Searching for patient... \n")
     column_number_acquire = PATIENT.findall(value)
@@ -465,7 +465,7 @@ def delete_one_patient(row_number):
         elif delete_option == "N" or delete_option == "n":
             print("Patient has not been removed.\n")
             main_menu()
-        else: 
+        else:
             print("Invalid input. Please try again.")
             search_patient()
             break
@@ -481,7 +481,7 @@ def delete_patient_row(row_number):
     print("This patient's details are now being removed from the system. \n")
     main_menu()
     return deleted_patient
-    
+   
 
 def exit_system():
     """
