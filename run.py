@@ -16,6 +16,7 @@ SHEET = GSPREAD_CLIENT.open('clinic-patientbooking')
 PATIENT = SHEET.worksheet('patient_registration')
 APPOINTMENT = SHEET.worksheet('appointment_registration')
 
+
 def main_menu():
     """
     Main menu where the user can select between six diverse options
@@ -56,6 +57,7 @@ def main_menu():
             break
         else:
             print("Invalid input. Please enter any digit from 1-6")
+
 
 def register_new_patient():
     """
@@ -107,6 +109,7 @@ def register_new_patient():
 
     return update_worksheet_patient(register_new_patient)
 
+
 def validate_name(f_name):
     """
     Checks if the first name entered is valid.
@@ -117,6 +120,7 @@ def validate_name(f_name):
     else:
         print("Invalid input. Please try again.")
         return False
+
 
 def validate_name(l_name):
     """
@@ -129,6 +133,7 @@ def validate_name(l_name):
         print("Invalid input. Please try again.")
         return False
 
+
 def validate_dob(date_of_birth):
     """
     Checks if the date of birth entered is valid.
@@ -139,6 +144,7 @@ def validate_dob(date_of_birth):
     else:
         print("Invalid input. Please try again entering your D.O.B in dd/mm/yyyy format")
         return False
+
 
 def validate_number(mobile_number):
     """
@@ -151,6 +157,7 @@ def validate_number(mobile_number):
         print("Invalid number. Please try again.")
         return False
 
+
 def validate_email(email_address):
     """
     Checks if the email address entered is valid.
@@ -162,6 +169,7 @@ def validate_email(email_address):
         print("Invalid email address. Please try again.")
         return False
 
+
 def validate_name(full_name):
     """
     Checks if the first name entered is valid.
@@ -172,6 +180,7 @@ def validate_name(full_name):
     else:
         print("Invalid input. Please try again.")
         return False
+
 
 def registeranother_or_book():
     """
@@ -194,6 +203,7 @@ def registeranother_or_book():
             print("Invalid input. Please choose from A, B or C.")
             registeranother_or_book()
         return False
+
 
 def book_test():
     """
@@ -237,6 +247,7 @@ def book_test():
 
     return update_worksheet_appointment(book_test)
 
+
 def book_test_or_delete(row_number):
     """
     Allows the user to book a test after registering or searching for a 
@@ -258,6 +269,7 @@ def book_test_or_delete(row_number):
             book_test_or_delete()
         return False
 
+
 def book_another_test():
     """
     Allows the user to book an additional appointment or 
@@ -276,6 +288,7 @@ def book_another_test():
             book_another_test()
         return False
 
+
 def update_worksheet_patient(register_new_patient):
     """
     Updates the worksheet by adding details of the newly registered patient.
@@ -285,6 +298,7 @@ def update_worksheet_patient(register_new_patient):
     print('New patient has been registered and the files have been updated! \n')
     registeranother_or_book()
 
+
 def update_worksheet_appointment(book_test):
     """
     Updates the worksheet by adding details of a newly booked appointment for a patient.
@@ -293,6 +307,7 @@ def update_worksheet_appointment(book_test):
     new_appointment_worksheet.append_row([x for x in book_test.values()])
     print('New appointment has been booked for this patient! \n')
     book_another_test()
+
 
 def search_test():
     """
@@ -322,6 +337,7 @@ def search_test():
         print("Test not found for this patient. Please try again.")
         search_test()
 
+
 def column_acquire_two(column, value):
     """
     Acquires the column and value of each test input. 
@@ -330,6 +346,7 @@ def column_acquire_two(column, value):
     column_number_acquire_two = APPOINTMENT.findall(value)
 
     return column_number_acquire_two
+
 
 def delete_one_test(row_number_test):
     """
@@ -349,6 +366,7 @@ def delete_one_test(row_number_test):
             break
         return False
 
+
 def delete_test_row(row_number_test):
     """
     Removes a test of a patient by deleting a row from the APPOINTMENT worksheet
@@ -358,6 +376,7 @@ def delete_test_row(row_number_test):
     print("This test has now been cancelled and has been removed the system. \n")
     main_menu()
     return deleted_test
+
 
 def search_patient():
     """
@@ -386,6 +405,7 @@ def search_patient():
             search_patient()
             break
             return False
+
 
 def search_acquire(search_option):
     """
@@ -431,6 +451,7 @@ def column_acquire(column, value):
 
     return column_number_acquire
 
+
 def delete_one_patient(row_number):
     """
     Allows the user to select between yes or no when removing patient details.
@@ -449,6 +470,7 @@ def delete_one_patient(row_number):
             break
         return False
 
+
 def delete_patient_row(row_number):
     """
     Removes a patient by deleting a row from the PATIENT worksheet
@@ -459,6 +481,7 @@ def delete_patient_row(row_number):
     main_menu()
     return deleted_patient
     
+
 def exit_system():
     """
     Exits the programme when chosen from the main menu.
@@ -466,6 +489,7 @@ def exit_system():
     print("-----------LabClinic has now been shut down-----------")
     print("------------Thank you for using our system------------")
     print("-----------------Have a lovely day!-----------------")
+
 
 def main():
     main_menu()
@@ -476,6 +500,6 @@ print("--------------------------------------------------------------")
 print("--------------------Welcome to LabClinic--------------------")
 print("----------A client registration system that allows----------")
 print("---------------you to register patient details---------------")
-print("-----------------and book laboratory tests-----------------\n")
-print("--------------------------------------------------------------")
+print("-----------------and book laboratory tests-----------------")
+print("--------------------------------------------------------------\n")
 main()
