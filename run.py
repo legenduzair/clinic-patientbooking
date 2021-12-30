@@ -335,6 +335,7 @@ def search_test():
 
             print ("The following test details for this patient have been found!")
             print(listWithElemTwo)
+            delete_one_test(row_number_test)
     else:
         print("Test not found for this patient. Please try again.")
         search_test()
