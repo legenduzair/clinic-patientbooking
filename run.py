@@ -1,7 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import re
-# from django.utils.crypto import get_random_string
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
