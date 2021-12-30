@@ -174,27 +174,6 @@ def validate_name(full_name):
         print("Invalid input. Please try again.")
         return False
 
-# def generate_patient_id():
-#     id = get_random_string(length=6, allowed_chars='ABCDEF')
-    
-# def register_another_patient():
-#     """
-#     Allows the user to register an additional new patient or 
-#     go back to the main menu after registering the first one.
-#     """
-#     while True:
-#         another = input("Would you like to register another patient? If so, please press A. If you would like to go back to the main menu: Please press B \n")
-#         if another == "A" or another == "a":
-#             register_new_patient()
-#             break
-#         elif another == "B" or another == "b":
-#             main_menu()
-#             break
-#         else:
-#             print("Invalid input. Please choose from A or B.")
-#             register_another_patient()
-#         return False
-
 def registeranother_or_book():
     """
     Allows the user to choose an option between registering another new patient,
@@ -474,8 +453,10 @@ def main():
     register_new_patient()
     book_test()
 
+print("--------------------------------------------------------------")
 print("--------------------Welcome to LabClinic--------------------")
 print("----------A client registration system that allows----------")
 print("---------------you to register patient details---------------")
 print("-----------------and book laboratory tests-----------------\n")
+print("--------------------------------------------------------------")
 main()
