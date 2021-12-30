@@ -346,6 +346,12 @@ def column_acquire_two(column, value):
 
     return column_number_acquire_two
 
+def delete_test_row(row_number_test):
+    deleted_test = APPOINTMENT.delete_rows(row_number_test)
+    print("This test has now been cancelled and has been removed the system. \n")
+    main_menu()
+    return deleted_test
+
 def search_patient():
     """
     Allows the user to access a search menu to find any patient by their 
