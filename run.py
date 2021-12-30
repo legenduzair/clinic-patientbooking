@@ -40,6 +40,10 @@ def main_menu():
             print("Please enter the following details to book a test: \n")
             book_test()
             break
+        elif user_selection == '3':
+            print("Please search for the patient first you want to delete the test for: \n")
+            search_test()
+            break
         elif user_selection == '4':
             print("Please follow the instructions on the search menu: \n")
             search_patient()
@@ -312,6 +316,36 @@ def update_worksheet_appointment(book_test):
     print('New appointment has been booked for this patient! \n')
     book_another_test()
 
+def search_test():
+    print("-----Please Search Tests By Entering Patient's Full Name:-----")
+    search_test_option = "Full Name"
+
+    if search_test_option == "Full Name":
+        find_input_test = input("Full Name: ")
+        fullname = column_acquire_two("Full Name", find_input_test)
+        search_test_string = fullname
+    else:
+        print("Invalid input. Please try again.")
+
+    if search_test_string:
+        for cell_value_two in (search_test_string):
+            row_number_test = cell_value_two.row
+            value_list_two = APPOINTMENT.row_values(row_number_test)
+            listWithElemTwo = " ".join(map(str, value_list_two))
+
+            print ("The following test details for this patient have been found!")
+            print(listWithElemTwo)
+    else:
+        print("Test not found for this patient. Please try again.")
+        search_test()
+
+def column_acquire_two(column, value):
+
+    print("Searching for test booked for patient... \n")
+    column_number_acquire_two = APPOINTMENT.findall(value)
+
+    return column_number_acquire_two
+
 def search_patient():
     """
     Allows the user to access a search menu to find any patient by their 
@@ -379,7 +413,7 @@ def column_acquire(column, value):
     """
     Acquires the column and value of each input. 
     """
-    print("Searching for Patient... \n")
+    print("Searching for patient... \n")
     column_number_acquire = PATIENT.findall(value)
 
     return column_number_acquire
