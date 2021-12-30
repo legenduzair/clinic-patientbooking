@@ -31,25 +31,25 @@ def main_menu():
                 6. Exit\n
             """)
     while True:
-        user_selection = input("Please select a number from the following options: ")
+        user_selection = input("Select a number from the following options: ")
         if user_selection == '1':
-            print("Please enter the following details to register a patient: \n")
+            print("Enter the following details to register a patient: \n")
             register_new_patient()
             break
         elif user_selection == '2':
-            print("Please enter the following details to book a test: \n")
+            print("Enter the following details to book a test: \n")
             book_test()
             break
         elif user_selection == '3':
-            print("Please search for the patient first you want to delete the test for: \n")
+            print("Search for the patient you want to delete the test for: \n")
             search_test()
             break
         elif user_selection == '4':
-            print("Please follow the instructions on the search menu: \n")
+            print("Follow the instructions on the search menu: \n")
             search_patient()
             break
         elif user_selection == '5':
-            print("Please search for the patient you would like to delete. \n")
+            print("Search for the patient you would like to delete. \n")
             search_patient()
         elif user_selection == '6':
             print("LabClinic is now shutting down... \n")
@@ -142,7 +142,7 @@ def validate_dob(date_of_birth):
     if (re.search(pattern, date_of_birth)):
         return True
     else:
-        print("Invalid input. Please try again entering your D.O.B in dd/mm/yyyy format")
+        print("Invalid input. Please try entering your D.O.B in dd/mm/yyyy.")
         return False
 
 
@@ -184,12 +184,12 @@ def validate_name(full_name):
 
 def registeranother_or_book():
     """
-    Allows the user to choose an option between registering another new patient,
+    Allows the user to choose an option between registering another new patient
     booking a test for the current patient being entered or traversing back to
     the main menu.
     """
     while True:
-        reg_or_book = input("If you would like to register another patient, please press A. If you would look to book a test for the current patient, please press T. To go back to the main menu, please press B \n")
+        reg_or_book = input("To register new patient, press A. To book a test, press T. \n")
         if reg_or_book == "A" or reg_or_book == "a":
             register_new_patient()
             break
@@ -254,7 +254,7 @@ def book_test_or_delete(row_number):
     patient instead of having to go back to the main menu.
     """
     while True:
-        appointment = input("Would you like to book an appointment for this patient? If so, please press A. Would you like to delete this patient? If so, please press D. If you would like to go back to the main menu: Please press B \n")
+        appointment = input("To book a test, press A. To delete a test, press D. \n")
         if appointment == "A" or appointment == "a":
             book_test()
             break
@@ -276,7 +276,7 @@ def book_another_test():
     go back to the main menu after booking the first one.
     """
     while True:
-        another = input("Would you like to book another appointment? If so, please press A. If you would like to go back to the main menu: Please press B \n")
+        another = input("To book another test, please press A. Otherwise press B. \n")
         if another == "A" or another == "a":
             book_test()
             break
@@ -295,13 +295,14 @@ def update_worksheet_patient(register_new_patient):
     """
     new_patient_worksheet = SHEET.worksheet('patient_registration')
     new_patient_worksheet.append_row([x for x in register_new_patient.values()])
-    print('New patient has been registered and the files have been updated! \n')
+    print('New patient has been registered and files have been updated! \n')
     registeranother_or_book()
 
 
 def update_worksheet_appointment(book_test):
     """
-    Updates the worksheet by adding details of a newly booked appointment for a patient.
+    Updates the worksheet by adding details of a newly booked appointment 
+    for a patient.
     """
     new_appointment_worksheet = SHEET.worksheet('appointment_registration')
     new_appointment_worksheet.append_row([x for x in book_test.values()])
@@ -330,7 +331,7 @@ def search_test():
             value_list_two = APPOINTMENT.row_values(row_number_test)
             listWithElemTwo = " ".join(map(str, value_list_two))
 
-            print("The following test details for this patient have been found!")
+            print("The following test details for patient have been found!")
             print(listWithElemTwo)
             delete_one_test(row_number_test)
     else:
@@ -352,13 +353,13 @@ def delete_one_test(row_number_test):
     """
     Allows the user to select between yes or no when cancelled a test.
     """
-    delete_test_option = input("Are you sure you want to cancel this test? If yes, please press Y. If no, please press N. \n")
+    delete_test_option = input("To confirm cancellation, press Y otherwise, press N. \n")
     while True:
         if delete_test_option == "Y" or delete_test_option == "y":
             print("Test is now being cancelled... \n")
             delete_test_row(row_number_test)
         elif delete_test_option == "N" or delete_test_option == "n":
-            print("Test has not been cancelled and is still in the system. Now taking you back to the main menu. \n")
+            print("Test has not been cancelled. \n")
             main_menu()
         else: 
             print("Invalid input. Please try again.")
@@ -369,11 +370,11 @@ def delete_one_test(row_number_test):
 
 def delete_test_row(row_number_test):
     """
-    Removes a test of a patient by deleting a row from the APPOINTMENT worksheet
-    on gspread.
+    Removes a test of a patient by deleting a row from the APPOINTMENT 
+    worksheet on gspread.
     """
     deleted_test = APPOINTMENT.delete_rows(row_number_test)
-    print("This test has now been cancelled and has been removed the system. \n")
+    print("Test has now been cancelled and has been removed the system. \n")
     main_menu()
     return deleted_test
 
@@ -456,13 +457,13 @@ def delete_one_patient(row_number):
     """
     Allows the user to select between yes or no when removing patient details.
     """
-    delete_option = input("Are you sure you want to delete this patient? If yes, please press Y. If no, please press N. \n")
+    delete_option = input("To delete patient, press Y otherwise press N. \n")
     while True:
         if delete_option == "Y" or delete_option == "y":
             print("Patient is being removed... \n")
             delete_patient_row(row_number)
         elif delete_option == "N" or delete_option == "n":
-            print("Patient has not been removed and is still in the system. Now taking you back to the main menu. \n")
+            print("Patient has not been removed.\n")
             main_menu()
         else: 
             print("Invalid input. Please try again.")
