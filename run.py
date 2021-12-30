@@ -330,7 +330,7 @@ def search_test():
             value_list_two = APPOINTMENT.row_values(row_number_test)
             listWithElemTwo = " ".join(map(str, value_list_two))
 
-            print ("The following test details for this patient have been found!")
+            print("The following test details for this patient have been found!")
             print(listWithElemTwo)
             delete_one_test(row_number_test)
     else:
@@ -495,6 +495,7 @@ def main():
     main_menu()
     register_new_patient()
     book_test()
+
 
 print("--------------------------------------------------------------")
 print("--------------------Welcome to LabClinic--------------------")
