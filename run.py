@@ -428,7 +428,7 @@ def search_acquire(search_option):
         search_string = dob
     else:
         print("Invalid input. Please try again.")
- 
+            
     if search_string:
         for cell_value in (search_string):
             row_number = cell_value.row
@@ -481,7 +481,7 @@ def delete_patient_row(row_number):
     print("This patient's details are now being removed from the system. \n")
     main_menu()
     return deleted_patient
-   
+
 
 def exit_system():
     """
