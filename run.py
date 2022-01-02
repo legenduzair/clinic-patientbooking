@@ -259,7 +259,7 @@ def book_test_or_delete(row_number):
     patient instead of having to go back to the main menu.
     """
     while True:
-        appointment = input("To book a test, press A. To delete a test, press D. \n")
+        appointment = input("To book a test, press A. To delete this patient, press D. \n")
         if appointment == "A" or appointment == "a":
             book_test()
             break
