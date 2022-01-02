@@ -494,8 +494,8 @@ def exit_system():
 
 def main():
     main_menu()
-    register_new_patient()
-    book_test()
+    # register_new_patient()
+    # book_test()
 
 
 print("--------------------------------------------------------------")
