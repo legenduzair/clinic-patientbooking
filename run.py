@@ -239,10 +239,13 @@ def book_test():
 
     while True:
         special_requirements = input("Special Requirements: ")
-        if not special_requirements:
-            print("Please enter Yes or No.")
-        else:
+        sr_pattern = "[Yes|No]"
+        sr_match = re.search(sr_pattern, special_requirements)
+        if sr_match:
             break
+        else:
+            print("Please enter Yes or No.")
+            continue
     book_test["Special Requirements"] = special_requirements
 
     return update_worksheet_appointment(book_test)
