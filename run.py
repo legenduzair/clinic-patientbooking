@@ -222,12 +222,15 @@ def book_test():
     book_test["Full Name"] = full_name
 
     while True:
-        test_required = input("Test Required: ")
-        if not test_required:
-            print("Please enter a test for the patient.")
-        else:
+        test_required = input("Blood Test Required: ")
+        test_pattern = "Cholesterol|Blood Count|Thyroid|Liver|Electrolyte"
+        test_match = re.search(test_pattern, test_required)
+        if test_match:
             break
-    book_test["Test Required"] = test_required
+        else:
+            print("Please enter a test for the patient.")
+            continue
+    book_test["Blood Test"] = test_required
 
     while True:
         appointment_time = input("Appointment Time: ")
@@ -237,6 +240,7 @@ def book_test():
             break
         else:
             print("Please enter a time for the appointment in HH:MM.")
+            continue
     book_test["Appointment Time"] = appointment_time
 
     while True:
