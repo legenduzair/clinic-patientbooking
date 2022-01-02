@@ -37,7 +37,9 @@ def main_menu():
             register_new_patient()
             break
         elif user_selection == '2':
-            print("Enter the following details to book a test: \n")
+            print("----Enter the following details to book a test:---- \n")
+            print("---Please choose from the following blood tests:---")
+            print("Cholesterol, Blood Count, Thyroid, Liver, Electrolyte \n")
             book_test()
             break
         elif user_selection == '3':
