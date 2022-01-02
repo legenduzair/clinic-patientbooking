@@ -231,10 +231,12 @@ def book_test():
 
     while True:
         appointment_time = input("Appointment Time: ")
-        if not appointment_time:
-            print("Please enter a time for the appointment.")
-        else:
+        time_pattern = "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$"
+        time_match = re.search(time_pattern, appointment_time)
+        if time_match:
             break
+        else:
+            print("Please enter a time for the appointment in HH:MM.")
     book_test["Appointment Time"] = appointment_time
 
     while True:
