@@ -466,7 +466,7 @@ def search_acquire(search_option):
         search_string = dob
     else:
         print("Invalid input. Please try again.")
-            
+     
     if search_string:
         for cell_value in (search_string):
             row_number = cell_value.row
