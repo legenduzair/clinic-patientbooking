@@ -24,8 +24,8 @@ def main_menu():
     print("""
             --------------Main Menu--------------
                 1. Register New Patient
-                2. Book a Test
-                3. Cancel a Test
+                2. Book a Blood Test
+                3. Cancel an Appointment
                 4. Search for a Patient
                 5. Delete Patient Details
                 6. Exit\n
@@ -194,7 +194,9 @@ def registeranother_or_book():
         reg_or_book = input("""
         -----------------------------------------
         To register a new patient, please press A.
-        To book a test for this patient, please press T.
+        To book a blood test for this patient, please press T.
+        (Please choose from the following blood tests:
+        Cholesterol, Blood Count, Thyroid, Liver, Electrolyte)
         To go back to the main menu, please press B.
         ----------------------------------------- \n
         """)
@@ -215,7 +217,7 @@ def registeranother_or_book():
 
 def book_test():
     """
-    Books an appointment for a corresponding patient by adding details
+    Books a blood test for a corresponding patient by adding details
     of full name, test that is required, appointment time
     and any special requirements that are necessary for the booking.
     """
@@ -275,6 +277,8 @@ def book_test_or_delete(row_number):
         appointment = input("""
         -------------------------------------------------------
         To book a blood test for this patient, please press A.
+        (Please choose from the following blood tests:
+        Cholesterol, Blood Count, Thyroid, Liver, Electrolyte)
         To delete this patient, please press D.
         To go back to the main menu, please press B.
         ------------------------------------------------------- \n
