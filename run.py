@@ -31,7 +31,7 @@ def main_menu():
                 6. Exit\n
             """)
     while True:
-        user_selection = input("Select a number from the following options: ")
+        user_selection = input("Select a number from the following options:\n")
         if user_selection == '1':
             print("Enter the following details to register a patient: \n")
             register_new_patient()
@@ -70,7 +70,7 @@ def register_new_patient():
     register_new_patient = {}
 
     while True:
-        f_name = input("First Name: ")
+        f_name = input("First Name: \n")
         if validate_name(f_name):
             break
         else:
@@ -78,7 +78,7 @@ def register_new_patient():
     register_new_patient["First Name"] = f_name
 
     while True:
-        l_name = input("Last Name: ")
+        l_name = input("Last Name: \n")
         if validate_name(l_name):
             break
         else:
@@ -86,7 +86,7 @@ def register_new_patient():
     register_new_patient["Surname"] = l_name
 
     while True:
-        date_of_birth = input("Date of Birth: ")
+        date_of_birth = input("Date of Birth: \n")
         if validate_dob(date_of_birth):
             break
         else:
@@ -94,7 +94,7 @@ def register_new_patient():
     register_new_patient["Date of Birth"] = date_of_birth
 
     while True:
-        mobile_number = input("Mobile Number: ")
+        mobile_number = input("Mobile Number: \n")
         if validate_number(mobile_number):
             break
         else:
@@ -102,7 +102,7 @@ def register_new_patient():
     register_new_patient["Mobile Number"] = mobile_number
 
     while True:
-        email_address = input("Email Address: ")
+        email_address = input("Email Address: \n")
         if validate_email(email_address):
             break
         else:
@@ -224,7 +224,7 @@ def book_test():
     book_test = {}
 
     while True:
-        full_name = input("Full Name: ")
+        full_name = input("Full Name: \n")
         if validate_name(full_name):
             break
         else:
@@ -232,7 +232,7 @@ def book_test():
     book_test["Full Name"] = full_name
 
     while True:
-        test_required = input("Blood Test Required: ")
+        test_required = input("Blood Test Required: \n")
         test_pattern = "Cholesterol|Blood Count|Thyroid|Liver|Electrolyte"
         test_match = re.search(test_pattern, test_required)
         if test_match:
@@ -243,7 +243,7 @@ def book_test():
     book_test["Blood Test"] = test_required
 
     while True:
-        appointment_time = input("Appointment Time: ")
+        appointment_time = input("Appointment Time: \n")
         time_pattern = "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$"
         time_match = re.search(time_pattern, appointment_time)
         if time_match:
@@ -254,7 +254,7 @@ def book_test():
     book_test["Appointment Time"] = appointment_time
 
     while True:
-        special_requirements = input("Special Requirements: ")
+        special_requirements = input("Special Requirements: \n")
         sr_pattern = "[Yes|No]"
         sr_match = re.search(sr_pattern, special_requirements)
         if sr_match:
@@ -352,7 +352,7 @@ def search_test():
     search_test_option = "Full Name"
 
     if search_test_option == "Full Name":
-        find_input_test = input("Full Name: ")
+        find_input_test = input("Full Name: \n")
         fullname = column_acquire_two("Full Name", find_input_test)
         search_test_string = fullname
     else:
@@ -428,7 +428,7 @@ def search_patient():
     print("----B. Surname----")
     print("--C. Date of Birth--")
     print("---D. Main Menu---")
-    print("--------------------")
+    print("--------------------\n")
     while True:
         search = input("Please choose an option from A to D. \n")
         if search == "A" or search == "a":
@@ -453,20 +453,20 @@ def search_acquire(search_option):
     information of the patient is translated into a string.
     """
     if search_option == "First Name":
-        find_input = input("First Name: ")
+        find_input = input("First Name: \n")
         first_name = column_acquire("First Name", find_input)
         search_string = first_name
     elif search_option == "Surname":
-        find_input = input("Last Name: ")
+        find_input = input("Last Name: \n")
         last_name = column_acquire("Surname", find_input)
         search_string = last_name
     elif search_option == "Date of Birth":
-        find_input = input("Date of Birth: ")
+        find_input = input("Date of Birth: \n")
         dob = column_acquire("Date of Birth", find_input)
         search_string = dob
     else:
         print("Invalid input. Please try again.")
-     
+    
     if search_string:
         for cell_value in (search_string):
             row_number = cell_value.row
@@ -537,8 +537,6 @@ def exit_system():
 
 def main():
     main_menu()
-    # register_new_patient()
-    # book_test()
 
 
 print("--------------------------------------------------------------")
