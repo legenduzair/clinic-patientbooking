@@ -153,7 +153,7 @@ def validate_number(mobile_number):
     Checks if the mobile number entered is valid.
     """
     pattern = "^(07\d{8,12}|447\d{7,11})$"
-    if (re.search(pattern, mobile_number)):
+    if (re.search(pattern, mobile_number)) and len(mobile_number) == 11:
         return True
     else:
         print("Invalid number. Please try again.")
