@@ -191,7 +191,13 @@ def registeranother_or_book():
     the main menu.
     """
     while True:
-        reg_or_book = input("To register new patient, press A. To book a test, press T. \n")
+        reg_or_book = input("""
+        -----------------------------------------
+        To register a new patient, please press A.
+        To book a test for this patient, please press T.
+        To go back to the main menu, please press B.
+        ----------------------------------------- \n
+        """)
         if reg_or_book == "A" or reg_or_book == "a":
             register_new_patient()
             break
@@ -261,11 +267,18 @@ def book_test():
 
 def book_test_or_delete(row_number):
     """
-    Allows the user to book a test after registering or searching for a
+    Allows the user to book a test or delete
+    the patient after registering or searching for a
     patient instead of having to go back to the main menu.
     """
     while True:
-        appointment = input("To book a test, press A. To delete this patient, press D. \n")
+        appointment = input("""
+        -------------------------------------------------------
+        To book a blood test for this patient, please press A.
+        To delete this patient, please press D.
+        To go back to the main menu, please press B.
+        ------------------------------------------------------- \n
+        """)
         if appointment == "A" or appointment == "a":
             book_test()
             break
@@ -287,7 +300,12 @@ def book_another_test():
     go back to the main menu after booking the first one.
     """
     while True:
-        another = input("To book another test, please press A. Otherwise press B. \n")
+        another = input("""
+        --------------------------------------------
+        To book another blood test, please press A.
+        To go back to the main menu, please press B.
+        --------------------------------------------\n
+        """)
         if another == "A" or another == "a":
             book_test()
             break
@@ -304,8 +322,8 @@ def update_worksheet_patient(register_new_patient):
     """
     Updates the worksheet by adding details of the newly registered patient.
     """
-    new_patient_worksheet = SHEET.worksheet('patient_registration')
-    new_patient_worksheet.append_row([x for x in register_new_patient.values()])
+    new_patient_wrksheet = SHEET.worksheet('patient_registration')
+    new_patient_wrksheet.append_row([x for x in register_new_patient.values()])
     print('New patient has been registered and files have been updated! \n')
     registeranother_or_book()
 
@@ -364,7 +382,12 @@ def delete_one_test(row_number_test):
     """
     Allows the user to select between yes or no when cancelled a test.
     """
-    delete_test_option = input("To confirm cancellation, press Y otherwise, press N. \n")
+    delete_test_option = input("""
+    -----------------------------------------------------------------
+    Are you sure you want to delete this test? If so, please press Y.
+    If you do not and you want to return to the main menu, please press N.
+    ----------------------------------------------------------------- \n
+    """)
     while True:
         if delete_test_option == "Y" or delete_test_option == "y":
             print("Test is now being cancelled... \n")
@@ -468,7 +491,12 @@ def delete_one_patient(row_number):
     """
     Allows the user to select between yes or no when removing patient details.
     """
-    delete_option = input("To delete patient, press Y otherwise press N. \n")
+    delete_option = input("""
+    -----------------------------------------------------------------
+    Are you sure you want to delete this patient? If so, please press Y.
+    If you do not and you want to return to the main menu, please press N.
+    ----------------------------------------------------------------- \n
+    """)
     while True:
         if delete_option == "Y" or delete_option == "y":
             print("Patient is being removed... \n")
