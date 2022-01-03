@@ -31,7 +31,7 @@ def main_menu():
                 6. Exit\n
             """)
     while True:
-        user_selection = input("Select a number from the following options:\n")
+        user_selection = input("Select a number from the options above: \n")
         if user_selection == '1':
             print("Enter the following details to register a patient: \n")
             register_new_patient()
