@@ -7,6 +7,8 @@ In health care, it is vital that the programmes that are used by employees are r
 
 The system gives the user multiple options when handling patient records. This includes registering a new patient, searching for an existing patient and deleting an existing patient. Laboratory blood test appointments can also be booked and cancelled for a patient. The last option is present for the user to exit the programme to shut it down. 
 
+![Responsive Screenshot Markup](/documentation/screenshots/responsive-project3.png)
+
 ## UX & Planning
 
 ### Project Goals
