@@ -19,7 +19,11 @@ The system gives the user multiple options when handling patient records. This i
 - As a user, I would like to get to my options quickly whether if its registering a new patient or booking a test as there would be potentially many clients to go record in the health care field.
 
 ### Programme Structure 
+Before initiating the project, I planned the structural layout of the programme by creating a flow chart on [Diagrams](https://app.diagrams.net/).
 
+![Structural flow chart of project](/documentation/screenshots/flowchart-labclinic.png)
+
+The flow chart initiates with the Main Menu where the user has the option to choose from 6 inputs; Registering a patient, Booking a blood test, Cancelling a blood test, Searching for an existing patient, Deleting an existing patient and finally closing down the programme. After each task is completed, the user has the option to go continue or go back to the main menu. 
 
 ## Features
 ### Existing Features
