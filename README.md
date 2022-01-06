@@ -33,8 +33,17 @@ The flow chart initiates with the Main Menu where the user has the option to cho
   - The initial start up screen welcomes the user to LabClinic with a greeting message.  
   - Below this message, the main menu is located where the user has six different options to choose from. These include register a new patient, book a blood test, cancel an appointment, search for a patient, delete patient details and exit the programme. In order to access either of these options, the user will have to input any number from 1 to 6. Any other number inputted will result in an error stating that it is an invalid input and prompts the user to try again.
 
-  ![Main menu of programme](/documentation/screenshots/main-menu-ss.png)
+  ![Main menu](/documentation/screenshots/main-menu-ss.png)
 
+- Register New Patient
+  - When the user inputs the number '1', they are taken to the screen where they can input details to register a new patient. These details include first name, surname, date of birth, mobile number and an email address. Once the inputs have surpassed all validation checks, a message will pop up which will address the user that a patient has been registered. These patient details will be added to the gspread patient worksheet.
+  - For the first and last names to be validated, the input has to be alphabetical only. 
+  - For the date of birth to be validated, the input has to be in DD/MM/YYYY format. If the user enters anything else, the programme will prompt the user to input a date of birth in the set format.
+  - For the email address to be validated, the input can contain anything (letters and numbers), has to have an '@' symbol and must contain '.com', '.co.uk' or '.net' at the end. If the user enters anything else, they will be prompted to input an email address again. 
+  - For the mobile number to be validated, the input has to be a UK mobile number (starting with 07) and should be 11 digits in length. If the user enters anything else, they will be prompted to input a mobile number again.
+  - After registering a new patient, the user will have an option to register another patient, book a test for the newly registered patient or return to the main menu.
+
+  ![Register a new patient](/documentation/screenshots/register-new-patient-ss.png)
 
 ## Future Improvements
 
