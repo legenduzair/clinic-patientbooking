@@ -29,7 +29,11 @@ The flow chart initiates with the Main Menu where the user has the option to cho
 
 ## Features
 ### Existing Features
+- Main Menu
+  - The initial start up screen welcomes the user to LabClinic with a greeting message.  
+  - Below this message, the main menu is located where the user has six different options to choose from. These include register a new patient, book a blood test, cancel an appointment, search for a patient, delete patient details and exit the programme. In order to access either of these options, the user will have to input any number from 1 to 6. Any other number inputted will result in an error stating that it is an invalid input and prompts the user to try again.
 
+  ![Main menu of programme](/documentation/screenshots/main-menu-ss.png)
 
 
 ## Future Improvements
