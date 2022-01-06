@@ -45,6 +45,16 @@ The flow chart initiates with the Main Menu where the user has the option to cho
 
   ![Register a new patient](/documentation/screenshots/register-new-patient-ss.png)
 
+- Book a Blood Test
+  - When the user inputs the number '2', they are taken to the screen where they can input details to book a blood test. These details include full name, blood test required, appointment time and special requirements. Once the inputs have surpassed all validation checks, a message will pop up which will address the user that a test has been booked. These test details will be added to the gspread appointment worksheet.
+  - For the full name to be validated, the input has to be alphabetical only.
+  - For the blood test required to be validated, the input has to be test names only from the selection provided by the programme when the user first chooses the option to book a blood test. 
+  - For the appointment time to be validated, the input has to be in HH:MM format and in digits only. 
+  - For the special requirements to be validated, the input has to be a selection from 'yes' or 'no'.
+  - After booking a blood test, the user will have an option to book another blood test or return to the main menu.
+
+  ![Book a blood test](/documentation/screenshots/book-blood-test-ss.png)
+
 ## Future Improvements
 
 
