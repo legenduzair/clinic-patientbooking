@@ -79,6 +79,12 @@ The flow chart initiates with the Main Menu where the user has the option to cho
 
 ![Delete a patient](/documentation/screenshots/delete-patient-ss.png)
 
+- Exit Programme
+  - When the user inputs the number '6', they will be provided with a message telling them that the programme has been shut down and thanks the user for operating the programme.
+  - Once the programme has been closed, the user will have to run the programme again to access the main menu.
+
+![Exit programme](/documentation/screenshots/exit-programme-ss.png)
+
 ## Future Improvements
 
 
