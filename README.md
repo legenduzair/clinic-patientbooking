@@ -56,12 +56,20 @@ The flow chart initiates with the Main Menu where the user has the option to cho
 ![Book a blood test](/documentation/screenshots/book-blood-test-ss.png)
 
 - Cancel an Appointment 
-  - When the user inputs the number '3', they are taken to the screen where they can find the test they would like to delete. To search for the test, the user will have to input the full name of the patient. If the examined patient is on the gspread worksheet, the relevant booked test for the patient will be returned.
-  - The user will then have an option to either delete the patient or go back to the main menu. 
+  - When the user inputs the number '3', they are taken to the screen where they can find the test they would like to delete. To search for the test, the user will have to input the full name of the patient. If the examined test is on the gspread worksheet, the relevant booked test for the patient will be returned.
+  - The user will then have an option to either delete the test or go back to the main menu. When the test is deleted, the corresponding row of that appointment will be removed from the gspread appointment worksheet.
   - If there is no patient found, the programme will prompt the user to try again. 
 
 ![Cancel a blood test](/documentation/screenshots/cancel-test-ss.png)
 
+- Search for a Patient
+  - When the user inputs the number '4', they are taken to a search menu where they can find the patient by inputting any one of three credentials. These include first name, last name and date of birth. If the examined patient is on the gspread worksheet, the relevant patient with their details will be returned and displayed to the user. 
+  - Once the patient has been returned, the user has an option to either book a blood test, delete the patient or traverse back to the main menu.
+  - If there is no patient found, the programme will prompt the user to try again.
+
+![Search menu](/documentation/screenshots/search-menu-ss.png)
+
+![Search options after finding patient](/documentation/screenshots/search-patient-options-ss.png)
 ## Future Improvements
 
 
