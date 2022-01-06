@@ -43,7 +43,7 @@ The flow chart initiates with the Main Menu where the user has the option to cho
   - For the mobile number to be validated, the input has to be a UK mobile number (starting with 07) and should be 11 digits in length. If the user enters anything else, they will be prompted to input a mobile number again.
   - After registering a new patient, the user will have an option to register another patient, book a test for the newly registered patient or return to the main menu.
 
-  ![Register a new patient](/documentation/screenshots/register-new-patient-ss.png)
+![Register a new patient](/documentation/screenshots/register-new-patient-ss.png)
 
 - Book a Blood Test
   - When the user inputs the number '2', they are taken to the screen where they can input details to book a blood test. These details include full name, blood test required, appointment time and special requirements. Once the inputs have surpassed all validation checks, a message will pop up which will address the user that a test has been booked. These test details will be added to the gspread appointment worksheet.
@@ -53,7 +53,14 @@ The flow chart initiates with the Main Menu where the user has the option to cho
   - For the special requirements to be validated, the input has to be a selection from 'yes' or 'no'.
   - After booking a blood test, the user will have an option to book another blood test or return to the main menu.
 
-  ![Book a blood test](/documentation/screenshots/book-blood-test-ss.png)
+![Book a blood test](/documentation/screenshots/book-blood-test-ss.png)
+
+- Cancel an Appointment 
+  - When the user inputs the number '3', they are taken to the screen where they can find the test they would like to delete. To search for the test, the user will have to input the full name of the patient. If the examined patient is on the gspread worksheet, the relevant booked test for the patient will be returned.
+  - The user will then have an option to either delete the patient or go back to the main menu. 
+  - If there is no patient found, the programme will prompt the user to try again. 
+
+![Cancel a blood test](/documentation/screenshots/cancel-test-ss.png)
 
 ## Future Improvements
 
