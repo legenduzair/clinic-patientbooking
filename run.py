@@ -433,12 +433,16 @@ def search_patient():
         search = input("Please choose an option from A to D. \n")
         if search == "A" or search == "a":
             search_acquire("First Name")
+            break
         elif search == "B" or search == "b":
             search_acquire("Surname")
+            break
         elif search == "C" or search == "c":
             search_acquire("Date of Birth")
+            break
         elif search == "D" or search == "d":
             main_menu()
+            break
         else:
             print("Invalid input. Please try again.")
             search_patient()
