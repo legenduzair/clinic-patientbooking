@@ -58,7 +58,7 @@ The flow chart initiates with the Main Menu where the user has the option to cho
 - Cancel an Appointment 
   - When the user inputs the number '3', they are taken to the screen where they can find the test they would like to delete. To search for the test, the user will have to input the full name of the patient. If the examined test is on the gspread worksheet, the relevant booked test for the patient will be returned.
   - The user will then have an option to either delete the test or go back to the main menu. When the test is deleted, the corresponding row of that appointment will be removed from the gspread appointment worksheet.
-  - If there is no patient found, the programme will prompt the user to try again. 
+  - If there is no test found, the programme will prompt the user to try again. 
 
 ![Cancel a blood test](/documentation/screenshots/cancel-test-ss.png)
 
@@ -70,6 +70,15 @@ The flow chart initiates with the Main Menu where the user has the option to cho
 ![Search menu](/documentation/screenshots/search-menu-ss.png)
 
 ![Search options after finding patient](/documentation/screenshots/search-patient-options-ss.png)
+
+- Delete Patient Details
+ - When the user inputs the number '5', they are taken to the same search menu as from the option above. After finding the patient by inputting any one of the three credentials and if the patient is present on the gspread worksheet, they will be returned and displayed to the user. 
+ - The user will then have an option to delete the patient along with many other options. If the user chooses to delete, a final confirmation message is displayed ensuring they make the correct decision. 
+ - If the user confirms that the patient should be deleted, then the corresponding row of that patient will be removed from the gspread patient worksheet.
+ - If there is no patient found, the programme will prompt the user to try again.
+
+![Delete a patient](/documentation/screenshots/delete-patient-ss.png)
+
 ## Future Improvements
 
 
