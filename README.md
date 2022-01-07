@@ -113,7 +113,13 @@ When developing this project, a data model was used when creating the database. 
   
 
 ## Bugs
+During the development of LabClinic, I encountered few bugs that needed attention. These are listed below:
 
+### Fixed Bugs
+  - Bug No 1
+    - Problem: If the selection is chosen to exit the programme right after accessing the search menu to search for a patient, the statement 'Please choose an option from A to D.' would appear after the exit programme message. 
+    - Cause: There was no break statement after each search acquire variable input in the search patient function which allowed the message to appear even after the programme had been closed down.
+    - Fix: A break statement was added after each search acquire variable input in the search patient function.
 
 
 ## Validator Testing
