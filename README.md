@@ -86,7 +86,11 @@ The flow chart initiates with the Main Menu where the user has the option to cho
 ![Exit programme](/documentation/screenshots/exit-programme-ss.png)
 
 ## Future Improvements
+Ongoing improvements and developments are vital to any project and their success. Future ideas I would implement are:
 
+  - Integrating an option in the programme that allows the user to update any credentials of a patient instead of having to register a new patient or searching for the patient and deleting the whole record. This would make it easier for the user to manage patient details quickly and as efficiently as possible. 
+  - Adding a feature to the programme that double checks the patient and test records if the user enters the same patient or test into the programme. If the same patient or test is entered, the programme would return a message stating that the patient or test has already been registered. 
+  - To take it to a more advanced level, integrating the logic of generating random ID's that include a certain number of digits could be assigned to a patient or a test after each one is recorded and added to the gspread worksheets. These patient or test ID's can be used in the search tool of the programme to handle and manage patient records.
 
 
 ## Data Model
