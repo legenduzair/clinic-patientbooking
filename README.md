@@ -128,9 +128,8 @@ When examining the python code for any errors, [PEP8](http://pep8online.com/) re
   - Libraries
     - [Google Sheets](https://www.google.co.uk/sheets/about/) was used to create a database with two worksheets, patient and appointment. [Gspread](https://docs.gspread.org/en/latest/) is a Python API used for the programme to access the database on Google Sheets. These gspread worksheets are used to handle patient and test information when the user operates the programme. When registering a patient or booking a blood test, these details will be added to the gspread worksheets. When deleting a patient or cancelling a blood test, these details will be removed from the gspread worksheets.
     - Throughout this project, regular expressions were used to validate many credentials using the [Regex library](https://docs.python.org/3/library/re.html).
-    - 
+    - [Tables Generator](https://www.tablesgenerator.com/markdown_tables) was used to create a markdown table for the data model used for this Python project.
     - To deploy this project and obtain an active link, [Heroku](https://www.heroku.com/) was used. 
-
 
 ## Deployment
 
