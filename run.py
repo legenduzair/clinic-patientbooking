@@ -240,7 +240,7 @@ def book_test():
         if test_match:
             break
         else:
-            print("Please enter a test for the patient.")
+            print("Please enter a test for the patient. \n")
             continue
     book_test["Blood Test"] = test_required
 
@@ -256,13 +256,14 @@ def book_test():
     book_test["Appointment Time"] = appointment_time
 
     while True:
+        print("Please enter Yes/Y or No/n")
         special_requirements = input("Special Requirements: \n")
         sr_pattern = "[Yes|No]"
         sr_match = re.search(sr_pattern, special_requirements)
         if sr_match:
             break
         else:
-            print("Please enter Yes or No.")
+            # print("Please enter Yes or No.")
             continue
     book_test["Special Requirements"] = special_requirements
 
