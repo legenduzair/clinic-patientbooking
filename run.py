@@ -38,8 +38,8 @@ def main_menu():
             break
         elif user_selection == '2':
             print("----Enter the following details to book a test:---- \n")
-            print("---Please choose from the following blood tests:---")
-            print("Cholesterol, Blood Count, Thyroid, Liver, Electrolyte \n")
+            # print("---Please choose from the following blood tests:---")
+            # print("Cholesterol, Blood Count, Thyroid, Liver, Electrolyte \n")
             book_test()
             break
         elif user_selection == '3':
@@ -232,6 +232,8 @@ def book_test():
     book_test["Full Name"] = full_name
 
     while True:
+        print("---Please choose from the following blood tests:---")
+        print("Cholesterol, Blood Count, Thyroid, Liver, Electrolyte \n")
         test_required = input("Blood Test Required: \n")
         test_pattern = "Cholesterol|Blood Count|Thyroid|Liver|Electrolyte"
         test_match = re.search(test_pattern, test_required)
