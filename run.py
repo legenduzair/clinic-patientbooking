@@ -1,5 +1,5 @@
-import gspread
 import re
+import gspread
 from google.oauth2.service_account import Credentials
 
 SCOPE = [
@@ -324,7 +324,7 @@ def search_test():
 
     if search_test_option == "Full Name":
         find_input_test = input("Full Name: \n")
-        fullname = column_acquire_two("Full Name", find_input_test)
+        fullname = column_acquire_two(find_input_test)
         search_test_string = fullname
     else:
         print("Invalid input. Please try again.")
@@ -343,7 +343,7 @@ def search_test():
         return_to_menu()
 
 
-def column_acquire_two(column, value):
+def column_acquire_two(value):
     """
     Acquires the column and value of each test input.
     """
@@ -418,8 +418,7 @@ def search_patient():
             print("Invalid input. Please try again.")
             search_patient()
             break
-            return False
-
+          
 
 def search_acquire(search_option):
     """
@@ -429,19 +428,19 @@ def search_acquire(search_option):
     """
     if search_option == "First Name":
         find_input = input("First Name: \n")
-        first_name = column_acquire("First Name", find_input)
+        first_name = column_acquire(find_input)
         search_string = first_name
     elif search_option == "Surname":
         find_input = input("Last Name: \n")
-        last_name = column_acquire("Surname", find_input)
+        last_name = column_acquire(find_input)
         search_string = last_name
     elif search_option == "Date of Birth":
         find_input = input("Date of Birth: \n")
-        dob = column_acquire("Date of Birth", find_input)
+        dob = column_acquire(find_input)
         search_string = dob
     else:
         print("Invalid input. Please try again.")
-    
+ 
     if search_string:
         for cell_value in (search_string):
             row_number = cell_value.row
@@ -456,7 +455,7 @@ def search_acquire(search_option):
         search_patient()
 
 
-def column_acquire(column, value):
+def column_acquire(value):
     """
     Acquires the column and value of each patient input.
     """
