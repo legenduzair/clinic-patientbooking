@@ -38,8 +38,6 @@ def main_menu():
             break
         elif user_selection == '2':
             print("----Enter the following details to book a test:---- \n")
-            # print("---Please choose from the following blood tests:---")
-            # print("Cholesterol, Blood Count, Thyroid, Liver, Electrolyte \n")
             book_test()
             break
         elif user_selection == '3':
@@ -116,30 +114,6 @@ def register_new_patient():
     return update_worksheet_patient(register_new_patient)
 
 
-# def validate_name(f_name):
-#     """
-#     Checks if the first name entered is valid.
-#     """
-#     pattern = "[a-zA-Z]"
-#     if (re.search(pattern, f_name)):
-#         return True
-#     else:
-#         print("Invalid input. Please try again.")
-#         return False
-
-
-# def validate_name(l_name):
-#     """
-#     Checks if the last name entered is valid.
-#     """
-#     pattern = "[a-zA-Z]"
-#     if (re.search(pattern, l_name)):
-#         return True
-#     else:
-#         print("Invalid input. Please try again.")
-#         return False
-
-
 def validate_dob(date_of_birth):
     """
     Checks if the date of birth entered is valid.
@@ -174,18 +148,6 @@ def validate_email(email_address):
     else:
         print("Invalid email address. Please try again.")
         return False
-
-
-# def validate_name(full_name):
-#     """
-#     Checks if the first name entered is valid.
-#     """
-#     pattern = "[a-zA-Z]"
-#     if (re.search(pattern, full_name)):
-#         return True
-#     else:
-#         print("Invalid input. Please try again.")
-#         return False
 
 
 def registeranother_or_book():
@@ -269,7 +231,6 @@ def book_test():
         if sr_match:
             break
         else:
-            # print("Please enter Yes or No.")
             continue
     book_test["Special Requirements"] = special_requirements
 
@@ -574,6 +535,9 @@ def exit_system():
 
 
 def main():
+    """
+    Initiates the programme.
+    """
     main_menu()
 
 
