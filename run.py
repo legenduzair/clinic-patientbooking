@@ -51,6 +51,7 @@ def main_menu():
         elif user_selection == '5':
             print("Search for the patient you would like to delete. \n")
             search_patient()
+            break
         elif user_selection == '6':
             print("LabClinic is now shutting down... \n")
             exit_system()
@@ -119,7 +120,7 @@ def validate_dob(date_of_birth):
     Checks if the date of birth entered is valid.
     """
     pattern = "^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"
-    if (re.search(pattern, date_of_birth)):
+    if re.search(pattern, date_of_birth):
         return True
     else:
         print("Invalid input. Please try entering your D.O.B in dd/mm/yyyy.")
@@ -131,7 +132,7 @@ def validate_number(mobile_number):
     Checks if the mobile number entered is valid.
     """
     pattern = "^(07\d{8,12}|447\d{7,11})$"
-    if (re.search(pattern, mobile_number)) and len(mobile_number) == 11:
+    if re.search(pattern, mobile_number) and len(mobile_number) == 11:
         return True
     else:
         print("Invalid number. Please try again.")
@@ -143,7 +144,7 @@ def validate_email(email_address):
     Checks if the email address entered is valid.
     """
     pattern = "[a-zA-Z0-9]+@[a-zA-Z]+\.(com|co.uk|net)"
-    if (re.search(pattern, email_address)):
+    if re.search(pattern, email_address):
         return True
     else:
         print("Invalid email address. Please try again.")
