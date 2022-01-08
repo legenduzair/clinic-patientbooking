@@ -58,7 +58,7 @@ The flow chart initiates with the Main Menu where the user has the option to cho
 - Cancel an Appointment 
   - When the user inputs the number '3', they are taken to the screen where they can find the test they would like to delete. To search for the test, the user will have to input the full name of the patient. If the examined test is on the gspread worksheet, the relevant booked test for the patient will be returned.
   - The user will then have an option to either delete the test or go back to the main menu. When the test is deleted, the corresponding row of that appointment will be removed from the gspread appointment worksheet.
-  - If there is no test found, the programme will prompt the user to try again. 
+  - If there is no test found, the programme will prompt the user to try again or ask if they want to return to the main menu. 
 
 ![Cancel a blood test](/documentation/screenshots/cancel-test-ss.png)
 
