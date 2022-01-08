@@ -372,7 +372,7 @@ def search_test():
             delete_one_test(row_number_test)
     else:
         print("Test not found for this patient. Please try again.")
-        search_test()
+        return_to_menu()
 
 
 def column_acquire_two(column, value):
@@ -531,6 +531,31 @@ def delete_patient_row(row_number):
     print("This patient's details are now being removed from the system. \n")
     main_menu()
     return deleted_patient
+
+
+def return_to_menu():
+    """
+    Provides the user with an option to return to the main menu after certain
+    tasks.
+    """
+    while True:
+        return_option = input("""
+        ------------------------------------------------------------------
+        Would you like to return to the main menu? If so, please press Q.
+        If you would like to search for a new test, please press S.
+        ------------------------------------------------------------------
+        """)
+        if return_option == 'Q' or return_option == 'q':
+            main_menu()
+            break
+        elif return_option == 'S' or return_option == 's':
+            search_test()
+            break
+        else:
+            print("Invalid input, please try again.")
+            return_to_menu()
+            break
+        return False
 
 
 def exit_system():
