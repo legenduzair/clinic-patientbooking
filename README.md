@@ -109,7 +109,11 @@ When developing this project, a data model was used when creating the database. 
 | Special Requirements | CharField |
 
 ## Testing
+During the development of LabClinic, the project went through rigorous testing to ensure a fully functional terminal programme was delivered at the end; A programme that has utilised defensive programming and that is also compatible with Heroku. To achieve this, I generated a flow chart of the structure of the programme. 
 
+The 'main' and 'main menu' functions were developed first as they were part of the foundation of the project and it was the first thing the user would have access to when running the programme. After this, I went down the main menu options and created a function for each of the six choices. There were also mini functions that were involved with the main functions such as the validation functions that would help validate the input of credentials entered by the user. These validation function included regular expressions which was thoroughly researched on external sources such as Stack Overflow and YouTube. Different regex were used to experiment the validation of inputs until the correct one was acquired. When registering a new patient or booking a blood test, I had to make sure that these credentials were added to my Google Worksheets accordingly. In the same way, when deleting a patient or cancelling a test, I had to make sure that these credentials were removed from my Google Worksheets accordingly. To achieve this, I attempted to add and remove many user credentials every 5 minutes to ensure my programme was fully functional with the database.
+
+Between the development of each main user selection, I used defensive programming and print statements to verify that if the user attempted to enter something else, the programme would return with a message to tell the user that the input was invalid and prompted them to try again. I also had to make sure that the user had an option to return to the main menu rather than being stuck in an infinite loop of entering patient or test data.
   
 
 ## Bugs
@@ -120,11 +124,17 @@ During the development of LabClinic, I encountered few bugs that needed attentio
     - Problem: If the selection is chosen to exit the programme right after accessing the search menu to search for a patient, the statement 'Please choose an option from A to D.' would appear after the exit programme message. 
     - Cause: There was no break statement after each search acquire variable input in the search patient function which allowed the message to appear even after the programme had been closed down.
     - Fix: A break statement was added after each search acquire variable input in the search patient function.
+  
+  - Bug No 2
+    - Problem: If the selection is chosen to exit the programme after accessing the search menu to search for a test, the statement 'Select from the options above' would appear after the exit programme message.
+    - Cause: There was no break statement in the main menu function after calling the search test function. 
+    - Fix: A break statement was added after the called search test function in the main menu function.
 
 
 ## Validator Testing
-When examining the python code for any errors, [PEP8](http://pep8online.com/) returned no errors. 
+When examining the python code for any errors, [PEP8](http://pep8online.com/) returned no errors as shown in the screenshot below:
 
+![PEP8 Validation](/documentation/screenshots/pep8-validator-ss.png)
 
 ## Technologies Used
 
