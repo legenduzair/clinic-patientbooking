@@ -71,18 +71,22 @@ def register_new_patient():
 
     while True:
         f_name = input("First Name: \n")
-        if validate_name(f_name):
+        first_pattern = "[a-zA-Z]"
+        first_match = re.search(first_pattern, f_name)
+        if first_match:
             break
         else:
-            continue
+            print("Please enter your first name.")
     register_new_patient["First Name"] = f_name
 
     while True:
         l_name = input("Last Name: \n")
-        if validate_name(l_name):
+        last_pattern = "[a-zA-Z]"
+        last_match = re.search(last_pattern, l_name)
+        if last_match:
             break
         else:
-            continue
+            print("Please enter your last name.")
     register_new_patient["Surname"] = l_name
 
     while True:
@@ -112,28 +116,28 @@ def register_new_patient():
     return update_worksheet_patient(register_new_patient)
 
 
-def validate_name(f_name):
-    """
-    Checks if the first name entered is valid.
-    """
-    pattern = "[a-zA-Z]"
-    if (re.search(pattern, f_name)):
-        return True
-    else:
-        print("Invalid input. Please try again.")
-        return False
+# def validate_name(f_name):
+#     """
+#     Checks if the first name entered is valid.
+#     """
+#     pattern = "[a-zA-Z]"
+#     if (re.search(pattern, f_name)):
+#         return True
+#     else:
+#         print("Invalid input. Please try again.")
+#         return False
 
 
-def validate_name(l_name):
-    """
-    Checks if the last name entered is valid.
-    """
-    pattern = "[a-zA-Z]"
-    if (re.search(pattern, l_name)):
-        return True
-    else:
-        print("Invalid input. Please try again.")
-        return False
+# def validate_name(l_name):
+#     """
+#     Checks if the last name entered is valid.
+#     """
+#     pattern = "[a-zA-Z]"
+#     if (re.search(pattern, l_name)):
+#         return True
+#     else:
+#         print("Invalid input. Please try again.")
+#         return False
 
 
 def validate_dob(date_of_birth):
@@ -172,16 +176,16 @@ def validate_email(email_address):
         return False
 
 
-def validate_name(full_name):
-    """
-    Checks if the first name entered is valid.
-    """
-    pattern = "[a-zA-Z]"
-    if (re.search(pattern, full_name)):
-        return True
-    else:
-        print("Invalid input. Please try again.")
-        return False
+# def validate_name(full_name):
+#     """
+#     Checks if the first name entered is valid.
+#     """
+#     pattern = "[a-zA-Z]"
+#     if (re.search(pattern, full_name)):
+#         return True
+#     else:
+#         print("Invalid input. Please try again.")
+#         return False
 
 
 def registeranother_or_book():
@@ -225,10 +229,12 @@ def book_test():
 
     while True:
         full_name = input("Full Name: \n")
-        if validate_name(full_name):
+        full_pattern = "[a-zA-Z]"
+        full_match = re.search(full_pattern, full_name)
+        if full_match:
             break
         else:
-            continue
+            print("Please enter your full name.")
     book_test["Full Name"] = full_name
 
     while True:
