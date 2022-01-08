@@ -152,3 +152,9 @@ When examining the python code for any errors, [PEP8](http://pep8online.com/) re
 
 
 ## Credits
+
+### Content and Special Thanks
+
+- All of the Python code was written by myself with the help of my tutor, [Richard Wells](https://github.com/D0nni387) and the Code Institute Slack community to assist me with the logic behind the complicated functions in my programme. 
+- [Stack Overflow](https://stackoverflow.com/) and [Kite's Regex Tutorials](https://www.youtube.com/watch?v=UQQsYXa1EHs) were used to understand the logic of regular expressions and how to integrate them within my Python code.
+- The [NHS Website](https://www.nhs.uk/conditions/blood-tests/types/) and my personal laboratory knowledge to provide me details of blood tests that are important to real life clinical patients.
