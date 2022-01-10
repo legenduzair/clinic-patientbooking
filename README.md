@@ -149,8 +149,27 @@ When examining the python code for any errors, [PEP8](http://pep8online.com/) re
     - To deploy this project and obtain an active link, [Heroku](https://www.heroku.com/) was used. 
 
 ## Deployment
+This project was deployed using Code Institute's mock terminal template in Heroku. After getting the project files ready for Heroku, the following steps were carried out to ensure successful deployment:
 
+  - Create a Heroku account and sign in.
+  - From the Heroku dashboard, select the 'Create new app' button.
+  - Input a unique app name and select your region. Then click on 'create app'.
+  - After this, navigate to the 'Settings' tab.
+  - Scroll down to the 'Config Vars' section and click on 'Reveal Config Vars'.
+  - In the field for KEY, enter 'CREDS' and for the VALUE, copy and paste the entire 'creds.json' file from your Gitpod workspace and input into here.
+  - In the second field for KEY, enter 'PORT' and for the VALUE, enter '8000'.
+  - After inputting both keys and values, select the 'Add' button to add these config vars.
+  - Then scroll down to the 'Buildpacks' section and click on 'Add Buildpack'.
+  - In the 'Enter Buildback URL' input, select Python and click 'Save Changes'.
+  - Repeat this for the Node.JS buildpack and save changes once more. (Make sure that the buildpacks are in the relevant order: Python first, then Node.JS second).
+  - After configuring the settings, navigate to the 'Deploy' tab.
+  - In the 'Deployment method' section, click on 'Connect to GitHub' and confirm to connect to GitHub.
+  - After this, search for your GitHub repository by entering the exact name of it. When it appears, click on the 'Connect' button to connect the Heroku app to your repository.
+  - After this, click on the 'Enable Automatic Deploys' button if you want any commited and pushed changes from GitHub to appear on the Heroku terminal.
+  - Then scroll down and click the 'Deploy Branch' button.
+  - After it is deployed, a message will appear stating 'Your app was successfully deployed'. A button will pop up for you to click on to display your project on the Heroku terminal.
 
+The final deployed link for the Heroku terminal project is in the link provided. [LabClinic](https://clinic-patientbooking.herokuapp.com/)
 
 ## Credits
 
