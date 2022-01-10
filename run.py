@@ -97,6 +97,7 @@ def register_new_patient():
     register_new_patient["Date of Birth"] = date_of_birth
 
     while True:
+        print("Please enter a valid UK mobile number.")
         mobile_number = input("Mobile Number: \n")
         if validate_number(mobile_number):
             break
@@ -502,8 +503,8 @@ def delete_patient_row(row_number):
 
 def return_to_menu():
     """
-    Provides the user with an option to return to the main menu after certain
-    tasks.
+    Provides the user with an option to search for a test or
+    return to the main menu after certain tasks.
     """
     while True:
         return_option = input("""
