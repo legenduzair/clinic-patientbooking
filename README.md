@@ -169,7 +169,7 @@ This project was deployed using Code Institute's mock terminal template in Herok
   - Then scroll down and click the 'Deploy Branch' button.
   - After it is deployed, a message will appear stating 'Your app was successfully deployed'. A button will pop up for you to click on to display your project on the Heroku terminal.
 
-The final deployed link for the Heroku terminal project is in the link provided. [LabClinic](https://clinic-patientbooking.herokuapp.com/)
+The final deployed link for the Heroku terminal project is provided over here: [LabClinic](https://clinic-patientbooking.herokuapp.com/)
 
 ## Credits
 
