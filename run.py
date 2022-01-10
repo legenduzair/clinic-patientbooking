@@ -161,24 +161,24 @@ def registeranother_or_book():
     while True:
         reg_or_book = input("""
         -----------------------------------------
-        To register a new patient, please press A.
-        To book a blood test for this patient, please press T.
+        To register a new patient, please press 1.
+        To book a blood test for this patient, please press 2.
         (Please choose from the following blood tests:
         Cholesterol, Blood Count, Thyroid, Liver, Electrolyte)
-        To go back to the main menu, please press B.
+        To go back to the main menu, please press Q.
         ----------------------------------------- \n
         """)
-        if reg_or_book == "A" or reg_or_book == "a":
+        if reg_or_book == "1":
             register_new_patient()
             break
-        elif reg_or_book == "T" or reg_or_book == "t":
+        elif reg_or_book == "2":
             book_test()
             break
-        elif reg_or_book == "B" or reg_or_book == "b":
+        elif reg_or_book == "Q" or reg_or_book == "q":
             main_menu()
             break
         else:
-            print("Invalid input. Please choose from A, B or C.")
+            print("Invalid input. Please choose from 1, 2 or Q.")
             registeranother_or_book()
         return False
 
@@ -248,24 +248,24 @@ def book_test_or_delete(row_number):
     while True:
         appointment = input("""
         -------------------------------------------------------
-        To book a blood test for this patient, please press A.
+        To book a blood test for this patient, please press 1.
         (Please choose from the following blood tests:
         Cholesterol, Blood Count, Thyroid, Liver, Electrolyte)
-        To delete this patient, please press D.
-        To go back to the main menu, please press B.
+        To delete this patient, please press 2.
+        To go back to the main menu, please press Q.
         ------------------------------------------------------- \n
         """)
-        if appointment == "A" or appointment == "a":
+        if appointment == "1":
             book_test()
             break
-        elif appointment == "D" or appointment == "d":
+        elif appointment == "2":
             delete_one_patient(row_number)
             break
-        elif appointment == "B" or appointment == "b":
+        elif appointment == "Q" or appointment == "q":
             main_menu()
             break
         else:
-            print("Invalid input. Please choose from A or B.")
+            print("Invalid input. Please choose from 1, 2 or Q.")
             book_test_or_delete(row_number)
         return False
 
@@ -278,18 +278,18 @@ def book_another_test():
     while True:
         another = input("""
         --------------------------------------------
-        To book another blood test, please press A.
-        To go back to the main menu, please press B.
+        To book another blood test, please press 1.
+        To go back to the main menu, please press Q.
         --------------------------------------------\n
         """)
-        if another == "A" or another == "a":
+        if another == "1":
             book_test()
             break
-        elif another == "B" or another == "b":
+        elif another == "Q" or another == "q":
             main_menu()
             break
         else:
-            print("Invalid input. Please choose from A or B.")
+            print("Invalid input. Please choose from 1 or Q.")
             book_another_test()
         return False
 
@@ -339,6 +339,7 @@ def search_test():
             print("The following test details for patient have been found!")
             print(listWithElemTwo)
             delete_one_test(row_number_test)
+            break
     else:
         print("Test not found for this patient. Please try again.")
         return_to_menu()
@@ -396,23 +397,23 @@ def search_patient():
     """
     print("-----Search By:-----")
     print("--------------------")
-    print("---A. First Name---")
-    print("----B. Surname----")
-    print("--C. Date of Birth--")
-    print("---D. Main Menu---")
+    print("---1. First Name---")
+    print("----2. Surname----")
+    print("--3. Date of Birth--")
+    print("---Q. Main Menu---")
     print("--------------------\n")
     while True:
-        search = input("Please choose an option from A to D. \n")
-        if search == "A" or search == "a":
+        search = input("Please choose an option from 1-3 or Q. \n")
+        if search == "1":
             search_acquire("First Name")
             break
-        elif search == "B" or search == "b":
+        elif search == "2":
             search_acquire("Surname")
             break
-        elif search == "C" or search == "c":
+        elif search == "3":
             search_acquire("Date of Birth")
             break
-        elif search == "D" or search == "d":
+        elif search == "Q" or search == "q":
             main_menu()
             break
         else:
@@ -510,13 +511,13 @@ def return_to_menu():
         return_option = input("""
         ------------------------------------------------------------------
         Would you like to return to the main menu? If so, please press Q.
-        If you would like to search for a new test, please press S.
+        If you would like to search for a new test, please press 1.
         ------------------------------------------------------------------
         """)
         if return_option == 'Q' or return_option == 'q':
             main_menu()
             break
-        elif return_option == 'S' or return_option == 's':
+        elif return_option == '1':
             search_test()
             break
         else:
